@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Metrochim — Аренда и обслуживание спецодежды в Санкт-Петербурге</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "cta-vibrant": "#007BFF",
+                        "inverse-primary": "#aec7f7",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-container": "#efedf1",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e3e2e6",
+                        "border-neutral": "#E9ECEF",
+                        "text-muted": "#6C757D",
+                        "surface": "#faf9fd",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#87a0cd",
+                        "on-secondary-fixed": "#001a41",
+                        "on-primary-fixed": "#001b3d",
+                        "secondary-fixed-dim": "#adc7ff",
+                        "on-surface": "#1a1b1e",
+                        "on-secondary-fixed-variant": "#004493",
+                        "surface-bright": "#faf9fd",
+                        "surface-variant": "#e3e2e6",
+                        "on-tertiary-fixed-variant": "#623f0f",
+                        "surface-container-low": "#f4f3f7",
+                        "primary": "#002046",
+                        "on-tertiary-container": "#c6965e",
+                        "outline-variant": "#c4c6cf",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-error-container": "#93000a",
+                        "surface-gray": "#F8F9FA",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#f1bd81",
+                        "tertiary-container": "#4f2f00",
+                        "secondary-fixed": "#d8e2ff",
+                        "primary-container": "#1b365d",
+                        "surface-tint": "#465f88",
+                        "status-industrial": "#343A40",
+                        "on-secondary-container": "#fefcff",
+                        "background": "#faf9fd",
+                        "surface-dim": "#dad9dd",
+                        "error": "#ba1a1a",
+                        "outline": "#74777f",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#ffddb9",
+                        "secondary-container": "#0070ea",
+                        "primary-fixed-dim": "#aec7f7",
+                        "secondary": "#0059bb",
+                        "inverse-surface": "#2f3033",
+                        "on-primary-fixed-variant": "#2e476f",
+                        "inverse-on-surface": "#f1f0f4",
+                        "on-background": "#1a1b1e",
+                        "surface-container-high": "#e9e7eb",
+                        "tertiary": "#321c00",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#44474e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "stack-xs": "4px",
+                        "section-gap": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; display: inline-block; }
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(233, 236, 239, 0.5); }
+        .timeline-line::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 2px; background: #E9ECEF; }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b border-border-neutral">
+<nav class="max-w-container-max mx-auto px-gutter py-4 flex justify-between items-center">
+<div class="text-headline-md font-bold text-primary">Metrochim</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-body-md text-cta-vibrant font-bold border-b-2 border-cta-vibrant pb-1" href="#">Services</a>
+<a class="font-body-md text-on-surface-variant hover:text-cta-vibrant transition-colors duration-200" href="#">Industries</a>
+<a class="font-body-md text-on-surface-variant hover:text-cta-vibrant transition-colors duration-200" href="#">About</a>
+<a class="font-body-md text-on-surface-variant hover:text-cta-vibrant transition-colors duration-200" href="#">Contacts</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden lg:block font-label-md text-primary border border-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-all">Order Callback</button>
+<button class="bg-cta-vibrant text-white font-label-md px-6 py-2 rounded-lg shadow-sm hover:opacity-90 transition-all">Request Quote</button>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional, high-end industrial photography shot showing a clean, modern textile maintenance facility. Soft morning light streams through large windows, illuminating advanced German machinery and workers in crisp, professional navy blue and vibrant orange high-visibility uniforms. The atmosphere is productive, organized, and surgical in its cleanliness, reflecting high-tier German standards of industrial hygiene." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjR6HVEW8irNXjk5GnxtTlWZu5vP4oxRCg0zVFng923s2z1JrlUR_uwv69UsTejpzyzY7x7o3DiIsf_yx6hr8AMT8fEKR6S0vQsXE9qegZpOTfQU3H3EdFJz-r1PpQMAAR5Jkg4ifDdvYFhYsgZRcH_WdgGgaAQ2687D0b6-4KagcMLvjkKZ2LuuUSHGAI-HV3dvZlm3-FCIy2of1ZzR6apjF-ls4n245muGwzVtnwoaAF9_sykpZ8')"></div>
+<div class="absolute inset-0 bg-primary/40"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full">
+<div class="max-w-2xl text-white">
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">Аренда и обслуживание спецодежды в Санкт-Петербурге</h1>
+<p class="font-body-lg text-body-lg mb-10 opacity-90">Собственное производство, немецкое оборудование Miele и BOWE. Мы берем на себя всё: от пошива до регулярной чистки и хранения.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-cta-vibrant text-white px-8 py-4 font-label-md rounded-lg shadow-lg hover:scale-[1.02] transition-transform flex items-center justify-center gap-2">
+<span>Заказать расчет</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 font-label-md rounded-lg hover:bg-white/20 transition-all">
+                            Пробная чистка
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Cards -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter">
+<div class="mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary">Решения для вашего бизнеса</h2>
+<div class="w-16 h-1 bg-cta-vibrant mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Medicine -->
+<div class="group relative overflow-hidden rounded-xl h-96 border border-border-neutral">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="A clinical medical environment with a focus on sterile white workwear. A professional lab technician or doctor is seen from the side, wearing a perfectly pressed, immaculate white medical gown. The lighting is bright and cool, emphasizing the themes of hygiene, safety, and professional excellence in healthcare." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAGVF-WVs2MbdoQeReOv7C8HBQQmNK04BbSEL51GQ5_y1YNebQ93HmbYuuDwS3uRL7rInAvVuunCv_KNZqrC08JnfI36AUnt7CSS4AzrLY686Ea8JO_BSnrxHWbmoQUW9LshkVZ0aMyWDQIokF4lAqMSCfh5OXWcqN8LwAi0vEbmjQ4jmtNOopi3Hn-T9Inkuh87BNhx8JxyKn6M1z66zLM2r1k5jw4LGIqGJxAeU8QkrEc9-17N_FG')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 p-6 text-white w-full">
+<h3 class="font-headline-md text-headline-md mb-2">Медицина</h3>
+<p class="font-body-md text-sm opacity-80">Стерильная обработка по ГОСТ и немецким стандартам гигиены.</p>
+</div>
+</div>
+<!-- HoReCa -->
+<div class="group relative overflow-hidden rounded-xl h-96 border border-border-neutral">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="A high-end restaurant kitchen where a chef is wearing a crisp white double-breasted jacket with black trim. The chef is plating a gourmet dish, with stainless steel surfaces reflecting warm ambient lighting. The focus is on the impeccable quality and cleanliness of the culinary uniform in a fast-paced luxury environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxNcOcKcVerpSeLbVsdOChOCF72qBINH1rtdBOdAsg3ZqxnvbLQN4OLAGxaJdNcygNHW30Z0Ohv7ldiHDOG8vl1qPmfXiZup-aENIIvSjSJfkLpDsgkmd_dRWCvq-p_IwTCixhePsZz6cLy-uFvURIPe1IQ-s9h0GW51IKVHxT2ZEsFR5F22ZXeLKbWvCW1ufFd3qXEXKg7iDWbP6am3484RlhNgz2pKMKRZK1Ik3-gWIyR024h55Y')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 p-6 text-white w-full">
+<h3 class="font-headline-md text-headline-md mb-2">HoReCa</h3>
+<p class="font-body-md text-sm opacity-80">Имиджевая форма для персонала отелей и ресторанов.</p>
+</div>
+</div>
+<!-- Manufacturing -->
+<div class="group relative overflow-hidden rounded-xl h-96 border border-border-neutral">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="An industrial factory floor featuring a technician in heavy-duty navy and orange protective gear. The worker is inspecting a piece of precision machinery. The background is a mix of industrial steel and soft focus machinery, with strong side lighting highlighting the durability and safety features of the professional workwear." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBNxei55rGBkmV0kESLAlT6f8PPfnMK_giahdNNlZrLELFqrT2tHGs2BOfWV2IfbvxqaCZtaNXPkjL1V64x67SNNAwA_Ax8UqLZrlV6q0fvCoXD7gM7tJ1Y2CDV-Xn317weufA1ZnFtXO96UjFhLp59I6d-WX7CqQ8T8M-BrsgZ1Bm9A4C232v2FJIwmfA0MgkkNSz95ME1De5CilMd36NWEjD_ToEeSRgcvuK14tp5HrwcLeVxTYAN')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 p-6 text-white w-full">
+<h3 class="font-headline-md text-headline-md mb-2">Производство</h3>
+<p class="font-body-md text-sm opacity-80">Износостойкие ткани и защитные свойства для любых условий.</p>
+</div>
+</div>
+<!-- Services -->
+<div class="group relative overflow-hidden rounded-xl h-96 border border-border-neutral">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500" data-alt="A logistics or service worker in a modern warehouse, wearing a clean, branded polo shirt and cargo trousers. He is holding a digital tablet, managing shipments. The scene is bright and professional, conveying efficiency, reliability, and modern service standards through clean and functional employee uniforms." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxVEdZ1F6NvoKJ8XVrFX45GwtR8vi27a95WdSlbIsNBcncPiZs8WEHAJFdxaYzdRg104rwwGKpiqbfbpzNuTAUInm3Bl5Daq_Cg4eQo4QgNjzxvn_b98OjJukdW_d_AFnu-vky6Sdza695Ihz6STNziZm_avEE0p4dl4BBNVk40mEnf8E64zkya4_ythkYqLsN7GukiHNqf5WxcMA_1e58YxXELBuLKQyCwcjUmun6YtVgul0x6vx8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 p-6 text-white w-full">
+<h3 class="font-headline-md text-headline-md mb-2">Сервис</h3>
+<p class="font-body-md text-sm opacity-80">Брендированная одежда для курьеров и сервисных инженеров.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid (Asymmetric) -->
+<section class="bg-surface-gray py-section-gap">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<span class="font-label-md text-cta-vibrant uppercase tracking-wider">Наши услуги</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-4">Комплексное обслуживание цикла спецодежды</h2>
+</div>
+<div class="bento-grid">
+<!-- Rental -->
+<div class="col-span-12 md:col-span-8 bg-white p-10 rounded-xl border border-border-neutral shadow-sm hover:shadow-md transition-all flex flex-col justify-between min-h-[400px]">
+<div>
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">inventory_2</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Аренда спецодежды</h3>
+<p class="font-body-md text-text-muted mb-6 max-w-lg">Оптимизируйте капитальные затраты. Мы предоставляем готовую форму, а вы платите только за её фактическое использование и обслуживание.</p>
+<ul class="space-y-3 font-body-md text-primary">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cta-vibrant text-body-md">check_circle</span>
+                                    Без затрат на закупку фонда
+                                </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cta-vibrant text-body-md">check_circle</span>
+                                    Регулярная замена изношенных изделий
+                                </li>
+</ul>
+</div>
+<div class="mt-8">
+<a class="text-cta-vibrant font-label-md flex items-center gap-2 hover:gap-4 transition-all" href="#">Подробнее об аренде <span class="material-symbols-outlined">trending_flat</span></a>
+</div>
+</div>
+<!-- Tailoring -->
+<div class="col-span-12 md:col-span-4 bg-primary text-white p-10 rounded-xl flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-cta-vibrant/20 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">style</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4 text-white">Пошив на заказ</h3>
+<p class="font-body-md text-sm opacity-80">Разработка лекал под ваши стандарты, брендирование и выбор тканей с учетом специфики работ.</p>
+</div>
+<button class="mt-8 border border-white/20 w-full py-3 rounded-lg font-label-md hover:bg-white/10 transition-all">Обсудить проект</button>
+</div>
+<!-- Laundry -->
+<div class="col-span-12 md:col-span-6 bg-white p-10 rounded-xl border border-border-neutral shadow-sm hover:shadow-md transition-all">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">local_laundry_service</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Стирка и химчистка</h3>
+<p class="font-body-md text-text-muted">Немецкое оборудование Miele и BOWE гарантирует удаление даже самых сложных производственных загрязнений без повреждения структуры ткани.</p>
+</div>
+<!-- Storage -->
+<div class="col-span-12 md:col-span-6 bg-white p-10 rounded-xl border border-border-neutral shadow-sm hover:shadow-md transition-all">
+<div class="w-12 h-12 bg-primary-fixed rounded-lg flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined text-3xl">database</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Хранение и учет</h3>
+<p class="font-body-md text-text-muted">Индивидуальная маркировка штрих-кодами и чипами позволяет отслеживать каждый комплект и гарантировать своевременную выдачу.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">Почему выбирают МЕТРОХИМ?</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container rounded-full flex items-center justify-center font-bold text-cta-vibrant">1</div>
+<div>
+<h4 class="font-headline-md text-lg mb-2">Сокращение расходов</h4>
+<p class="font-body-md text-text-muted">Мы берем на себя хранение, сбор, доставку и выдачу. Вам не нужно содержать собственный склад и штат персонала.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container rounded-full flex items-center justify-center font-bold text-cta-vibrant">2</div>
+<div>
+<h4 class="font-headline-md text-lg mb-2">Независимость от инфляции</h4>
+<p class="font-body-md text-text-muted">Подписываем договор с фиксированными условиями на срок до 5 лет. Прозрачное планирование бюджета.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 bg-surface-container rounded-full flex items-center justify-center font-bold text-cta-vibrant">3</div>
+<div>
+<h4 class="font-headline-md text-lg mb-2">Рост производительности</h4>
+<p class="font-body-md text-text-muted">Чистая форма — это часть соцпакета, которая повышает лояльность и дисциплину сотрудников.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+<div class="w-full h-full bg-cover bg-center" data-alt="A portrait of a satisfied manager in a modern industrial setting, standing next to a rack of perfectly cleaned and organized work uniforms. Each uniform is encased in thin protective plastic, hanging in perfect alignment. The manager looks confident and relaxed, symbolizing the peace of mind provided by Metrochim's comprehensive industrial clothing services." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1vJuJd7SFaoyJaJuQ2aS9VnQapLgdFhur74MruonhfukOnkrfDUmNegmoNrNGox8vbUlQd1Rdq6HZpFztNCg2F6qmoxZ9uLr-AXoijljpwzLJgFAP7beU1doP4JxMyP_1mbOCkGh9FN3E2rzROI3OoMwxuLx8z0_fjBCfs8uYxBw-ZDrRdy4ypkyXimigoTdV2SXPYKn7n-FT0F82NGrrqUXCrC0swlSe0w7TEbAQetgL9VyrIL92')"></div>
+</div>
+<div class="absolute -bottom-10 -left-10 bg-white p-8 rounded-xl shadow-xl border border-border-neutral hidden md:block">
+<div class="text-cta-vibrant font-display-lg text-4xl mb-1">20+</div>
+<div class="font-label-md text-primary uppercase">Лет опыта в отрасли</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="bg-status-industrial py-section-gap text-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg">Как мы работаем</h2>
+<p class="font-body-md opacity-70 mt-2">Высокие стандарты на каждом этапе</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
+<!-- Steps -->
+<div class="text-center group">
+<div class="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cta-vibrant transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<h4 class="font-headline-md text-base mb-2">Сбор</h4>
+<p class="font-body-md text-xs opacity-60">Забираем грязную одежду по графику</p>
+</div>
+<div class="text-center group">
+<div class="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cta-vibrant transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">sort</span>
+</div>
+<h4 class="font-headline-md text-base mb-2">Сортировка</h4>
+<p class="font-body-md text-xs opacity-60">Распределение по типу загрязнений</p>
+</div>
+<div class="text-center group">
+<div class="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cta-vibrant transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">eco</span>
+</div>
+<h4 class="font-headline-md text-base mb-2">Очистка</h4>
+<p class="font-body-md text-xs opacity-60">Немецкое оборудование и химия</p>
+</div>
+<div class="text-center group">
+<div class="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cta-vibrant transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">build</span>
+</div>
+<h4 class="font-headline-md text-base mb-2">Ремонт</h4>
+<p class="font-body-md text-xs opacity-60">Замена пуговиц, ремонт швов</p>
+</div>
+<div class="text-center group">
+<div class="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-cta-vibrant transition-colors duration-300">
+<span class="material-symbols-outlined text-3xl">task_alt</span>
+</div>
+<h4 class="font-headline-md text-base mb-2">Выдача</h4>
+<p class="font-body-md text-xs opacity-60">Доставка чистой формы в срок</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Block -->
+<section class="py-section-gap max-w-container-max mx-auto px-gutter overflow-hidden">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-16">Нам доверяют лидеры рынка</h2>
+<div class="flex space-x-12 animate-infinite-scroll opacity-50 grayscale hover:grayscale-0 transition-all">
+<!-- Logos Row -->
+<div class="flex items-center space-x-16 min-w-full justify-around py-4">
+<span class="text-2xl font-bold font-display-lg text-primary">GAZPROM</span>
+<span class="text-2xl font-bold font-display-lg text-primary">ROSTELECOM</span>
+<span class="text-2xl font-bold font-display-lg text-primary">BALTIKA</span>
+<span class="text-2xl font-bold font-display-lg text-primary">SIEMENS</span>
+<span class="text-2xl font-bold font-display-lg text-primary">VALEO</span>
+</div>
+</div>
+</section>
+<!-- Final CTA / Form -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+<div class="p-12 lg:p-20">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Бесплатный аудит спецодежды</h2>
+<p class="font-body-md text-text-muted mb-10">Оставьте заявку, и наш специалист проанализирует ваши текущие затраты и предложит схему оптимизации с использованием аренды и сервисного обслуживания.</p>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-sm text-primary mb-2">Ваше имя</label>
+<input class="w-full border-border-neutral rounded-lg focus:ring-cta-vibrant focus:border-cta-vibrant py-3 px-4" placeholder="Иван Иванов" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-sm text-primary mb-2">Телефон</label>
+<input class="w-full border-border-neutral rounded-lg focus:ring-cta-vibrant focus:border-cta-vibrant py-3 px-4" placeholder="+7 (___) ___-__-__" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-sm text-primary mb-2">Название компании</label>
+<input class="w-full border-border-neutral rounded-lg focus:ring-cta-vibrant focus:border-cta-vibrant py-3 px-4" placeholder="ООО Предприятие" type="text"/>
+</div>
+<button class="w-full bg-cta-vibrant text-white font-label-md py-4 rounded-lg shadow-lg hover:opacity-90 transition-all flex items-center justify-center gap-3" type="submit">
+                                Отправить заявку на аудит
+                                <span class="material-symbols-outlined">send</span>
+</button>
+<p class="font-caption text-xs text-text-muted mt-4">Нажимая кнопку, вы соглашаетесь с Политикой обработки персональных данных</p>
+</form>
+</div>
+<div class="hidden lg:block relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="A macro shot of a high-quality industrial fabric being inspected under perfect studio lighting. The texture is intricate, showing the weave density and the subtle sheen of a protective coating. The color is a deep professional navy, symbolizing the premium quality and attention to detail that Metrochim brings to its industrial wear manufacturing and maintenance." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSr1KFKZkALPP7qDQcUI_z_Y6PG6GtG6uGZglvAamv7DvoNulBAbzTDCMEBTvJedfjhLOIgLGPUYzF-5sFoa839R1hwoTiJX9UsFziLV8o7EWIyWykab3BjDxhYNxx6WzOrWxJGj9XBdhEBoFgXtVe4zmacd9qAaNI4LSMeBk5gRBha2UASOp3UbwhG3mGD1lkrGAYEox46fk3PJjhluhzVu4S4NubRMAskKDhZ6Z-i1VRltGB7PnY')"></div>
+<div class="absolute inset-0 bg-primary/20"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-status-industrial text-on-primary">
+<div class="max-w-container-max mx-auto px-gutter py-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="max-w-xs">
+<div class="text-headline-md font-bold text-white mb-6">Metrochim</div>
+<p class="font-body-md opacity-70 mb-8">© 2024 Metrochim. German-standard quality industrial services. Ведущий оператор по обслуживанию спецодежды в СЗФО.</p>
+<div class="flex items-center gap-4">
+<a class="font-body-md hover:text-cta-vibrant transition-colors" href="tel:+78127485348">+7 (812) 748-53-48</a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12 flex-grow">
+<div class="flex flex-col space-y-4">
+<span class="font-label-md uppercase tracking-wider text-white/50 mb-2">Услуги</span>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">Аренда</a>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">Стирка</a>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">Пошив</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label-md uppercase tracking-wider text-white/50 mb-2">Отрасли</span>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">Медицина</a>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">HoReCa</a>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">Производство</a>
+</div>
+<div class="flex flex-col space-y-4">
+<span class="font-label-md uppercase tracking-wider text-white/50 mb-2">Компания</span>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">О нас</a>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">Контакты</a>
+<a class="font-body-md text-surface-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+<div class="mt-section-gap pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2 text-white/40">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="font-caption">Санкт-Петербург, проспект Стачек, д.100</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white/60">schedule</span>
+<span class="font-caption opacity-60">пн.–вс. | 9:00 – 21:00</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.opacity = '0.8';
+                btn.style.transform = 'scale(0.98)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.opacity = '1';
+                btn.style.transform = 'scale(1)';
+            });
+        });
+
+        // Sticky header opacity on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            } else {
+                header.classList.remove('shadow-md');
+                header.style.backgroundColor = '#ffffff';
+            }
+        });
+    </script>
+</body></html>

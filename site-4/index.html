@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>МЕТРОХИМ — Спецодежда без простоев</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#7b2f04",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-background": "#1a1b21",
+                        "surface-dim": "#dad9e1",
+                        "on-surface": "#1a1b21",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "surface-container": "#eeedf5",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdbcd",
+                        "inverse-surface": "#2f3036",
+                        "primary-fixed": "#dce1ff",
+                        "surface-tint": "#3d58b2",
+                        "surface-container-low": "#f4f2fb",
+                        "inverse-primary": "#b6c4ff",
+                        "on-secondary-container": "#56656e",
+                        "attention-blue": "#2962FF",
+                        "on-primary-fixed": "#001550",
+                        "industrial-gray": "#F1F4F5",
+                        "deep-navy": "#0D1B3E",
+                        "on-surface-variant": "#444652",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "secondary-fixed-dim": "#bac9d3",
+                        "surface-variant": "#e3e1ea",
+                        "primary": "#002375",
+                        "outline-variant": "#c5c5d4",
+                        "primary-container": "#1b3a94",
+                        "background": "#faf8ff",
+                        "tertiary-container": "#742a00",
+                        "success-teal": "#2E7D5C",
+                        "on-tertiary-container": "#fd9261",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e8e7ef",
+                        "secondary-fixed": "#d6e5ef",
+                        "inverse-on-surface": "#f1f0f8",
+                        "tertiary": "#501b00",
+                        "secondary-container": "#d3e2ed",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#0f1d25",
+                        "on-tertiary-fixed": "#360f00",
+                        "surface": "#faf8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3b4951",
+                        "on-primary-fixed-variant": "#223f99",
+                        "secondary": "#526069",
+                        "outline": "#757683",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#94aaff",
+                        "surface-container-highest": "#e3e1ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "section-padding-desktop": "80px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "section-padding-mobile": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bento-card-hover:hover .icon-accent {
+            transform: scale(1.1) translateY(-4px);
+            color: var(--tw-color-attention-blue);
+        }
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-bottom-width: 2px;
+            border-bottom-color: #002375;
+            box-shadow: 0px 4px 20px rgba(27, 58, 148, 0.08);
+        }
+        .video-placeholder-mask {
+            mask-image: radial-gradient(circle, black 50%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md border-b border-outline-variant shadow-sm transition-all duration-200 ease-in-out">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-12">
+<a class="font-display-lg text-headline-md font-bold text-primary tracking-tight" href="/">МЕТРОХИМ</a>
+<nav class="hidden lg:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md" href="#">Услуги</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Отрасли</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">О компании</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Цены</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Контакты</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all">language</button>
+<a class="hidden sm:block text-primary font-medium px-4 py-2 hover:bg-primary-fixed/30 rounded-lg transition-colors" href="#">Личный кабинет</a>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-bold shadow-md hover:bg-primary-container transition-all active:scale-95">Оставить заявку</button>
+</div>
+</div>
+</header>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center grayscale-[0.3]" data-alt="High-resolution wide shot of a modern, clinical industrial textile processing facility. Large automated washing systems in the background, organized stacks of fresh workwear on metal racks. The lighting is bright, cold, and professional, emphasizing cleanliness and high-tech precision. Royal blue accents from the equipment create a corporate B2B atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaNjhqyLAELYW1uInMGlACxQz2UvuxrUS9LHkqVK8V0yK0DTgtqeTZH32aeH9pA-N-XOiTbGIpFZpdElUapZGqzgyKAhhtzHqU7j2-8so2Mvl3ePvA1461IzZROh1TOaxzFXQ1Lud33lYNH_SucW3xKBx0GfcKjxfG6lwKyWlkeBqmOYeKFP68ymyeMcZ0gbdGm39zVnaVUuFfvDoVAKipejvFqU9uVBDqXJ0NKf0OU7lu_yKBm5nH')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-deep-navy/90 via-deep-navy/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full">
+<div class="max-w-2xl text-white">
+<span class="font-label-caps text-label-caps text-primary-fixed mb-4 inline-block bg-primary/40 px-3 py-1 rounded backdrop-blur-sm">БИЗНЕС-РЕШЕНИЯ 360°</span>
+<h1 class="font-display-lg text-display-lg mb-6 leading-[1.1]">Спецодежда без простоев: аренда, стирка и замена за 24 часа</h1>
+<p class="font-body-lg text-body-lg text-surface-variant/90 mb-10 max-w-lg">Полный цикл текстильного менеджмента для вашего бизнеса в Санкт-Петербурге и ЛО. Мы берем на себя все заботы о внешнем виде ваших сотрудников.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-attention-blue hover:bg-attention-blue/90 text-white font-bold px-8 py-4 rounded-lg flex items-center gap-2 transition-all group">
+                            Рассчитать стоимость
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="border border-white/30 hover:bg-white/10 text-white font-bold px-8 py-4 rounded-lg transition-all backdrop-blur-sm">Наши услуги</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Sectors -->
+<section class="py-section-padding-desktop bg-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Выберите вашу отрасль</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Индивидуальные стандарты чистоты и износостойкости для специфических задач вашего производства.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="service-card group bg-surface-container-low p-8 border border-outline-variant relative overflow-hidden flex flex-col h-full cursor-pointer">
+<div class="mb-8">
+<span class="material-symbols-outlined text-[48px] text-attention-blue transition-transform duration-300 group-hover:scale-110">factory</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Производство и заводы</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Огнестойкие и защитные материалы, устойчивые к химическим воздействиям.</p>
+<div class="mt-auto flex items-center text-primary font-bold gap-2">
+<span>Подробнее</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Card 2 -->
+<div class="service-card group bg-surface-container-low p-8 border border-outline-variant relative overflow-hidden flex flex-col h-full cursor-pointer">
+<div class="mb-8">
+<span class="material-symbols-outlined text-[48px] text-attention-blue transition-transform duration-300 group-hover:scale-110">medical_services</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Медицина и фарма</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Высший класс стерильности. Антибактериальная обработка по стандартам СанПиН.</p>
+<div class="mt-auto flex items-center text-primary font-bold gap-2">
+<span>Подробнее</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Card 3 -->
+<div class="service-card group bg-surface-container-low p-8 border border-outline-variant relative overflow-hidden flex flex-col h-full cursor-pointer">
+<div class="mb-8">
+<span class="material-symbols-outlined text-[48px] text-attention-blue transition-transform duration-300 group-hover:scale-110">restaurant</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">HoReCa и отели</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Элегантная униформа для персонала, премиальный столовый текстиль.</p>
+<div class="mt-auto flex items-center text-primary font-bold gap-2">
+<span>Подробнее</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<!-- Card 4 -->
+<div class="service-card group bg-surface-container-low p-8 border border-outline-variant relative overflow-hidden flex flex-col h-full cursor-pointer">
+<div class="mb-8">
+<span class="material-symbols-outlined text-[48px] text-attention-blue transition-transform duration-300 group-hover:scale-110">construction</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Строительство</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Сверхпрочные ткани, сигнальные элементы и усиленные швы для тяжелых условий.</p>
+<div class="mt-auto flex items-center text-primary font-bold gap-2">
+<span>Подробнее</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</div>
+<div class="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us with Stats -->
+<section class="py-section-padding-desktop bg-industrial-gray/30">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col lg:flex-row gap-20 items-center">
+<div class="lg:w-1/2">
+<span class="font-label-caps text-label-caps text-primary mb-4 block">О КОМПАНИИ</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Технологическое лидерство в каждой детали</h2>
+<p class="text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                            МЕТРОХИМ — это не просто прачечная. Это высокотехнологичный центр управления текстильными ресурсами. Мы используем передовое немецкое оборудование Miele и BOWE, обеспечивая промышленный стандарт качества. 
+                        </p>
+<p class="text-body-md text-on-surface-variant mb-10">
+                            За 20 лет работы мы выстроили безупречную логистику, позволяющую гарантировать замену комплектов в течение 24 часов. Наш подход позволяет компаниям сократить расходы на содержание склада спецодежды до 40%.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:underline" href="#">
+                            Узнать больше о наших стандартах
+                            <span class="material-symbols-outlined">trending_flat</span>
+</a>
+</div>
+<div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-white p-8 border border-outline-variant rounded-lg shadow-sm">
+<div class="text-headline-lg font-bold text-attention-blue mb-2">400+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">АКТИВНЫХ КЛИЕНТОВ</div>
+</div>
+<div class="bg-primary p-8 border border-primary rounded-lg shadow-sm">
+<div class="text-headline-lg font-bold text-white mb-2">50 000+</div>
+<div class="font-label-caps text-label-caps text-primary-fixed">КОМПЛЕКТОВ В ОБОРОТЕ</div>
+</div>
+<div class="bg-white p-8 border border-outline-variant rounded-lg shadow-sm">
+<div class="text-headline-lg font-bold text-attention-blue mb-2">100%</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">СОБЛЮДЕНИЕ ГОСТ</div>
+</div>
+<div class="bg-white p-8 border border-outline-variant rounded-lg shadow-sm">
+<div class="text-headline-lg font-bold text-attention-blue mb-2">24ч</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">СРОК РЕАГИРОВАНИЯ</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Proofs Section -->
+<section class="py-section-padding-desktop bg-deep-navy text-white overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim mb-2 block">ПРОЦЕССЫ</span>
+<h2 class="font-headline-lg text-headline-lg">Посмотрите, как мы работаем</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 scrollbar-hide no-scrollbar snap-x snap-mandatory">
+<!-- Video Card 1 -->
+<div class="flex-none w-64 aspect-[9/16] bg-surface-container-highest rounded-xl overflow-hidden relative group snap-start">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A vertical video thumbnail showing a professional seamstress working on a industrial sewing machine, creating a high-quality navy blue work jacket. The lighting is focused and warm." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_c4OZstkCN1EsNtyH4ksiYd-7ZkJLIjg2COsBVS1ssEZnt3CY5dSsIl6DT-Msh_fqkgz0A8Q9eeghC_2O-amAwc9jqnu-dL0vSn1uJuVNhaKCl1Az8mBgoG-20eKSscbxncNr8qvlWGcnoD8CAXS5MQPjiX1lxzPEDwK-50jSrKZnVCaIwBjjc133N_idtdYpaGEaJgC9kT_c6mAgOenSkrFFO22Ip7O6C8T4Vg8lK5l-zQt5xyMb')"></div>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 font-label-caps text-[10px]">ЦЕХ ПОШИВА</div>
+</div>
+<!-- Video Card 2 -->
+<div class="flex-none w-64 aspect-[9/16] bg-surface-container-highest rounded-xl overflow-hidden relative group snap-start">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A vertical video thumbnail of massive industrial washing machines in a clean, brightly lit facility. Water splashes against the reinforced glass doors as workwear is processed." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAENXAoKmw94QJYm64YdSpl-HVbe9P5x4b1V327kUvYcy9VnALpc5u-PP3lqpmy-g4CnOVl20SoLoub6xoTvK4V2v3RloVj_7b4i63p2SfQQQzUCyLBBewsFP-O8rdzyHm00od4edrV6qXbWpZybfXLynggeFBvqZMz5kXTLKqmFV1tDFORXp6-kwvEabxzQz4faSwnFWEqWy8b-Nn6FQo8yyRWIV1zeg45RJ0dcnDxBpGx52XkcCR_')"></div>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 font-label-caps text-[10px]">ХИМЧИСТКА</div>
+</div>
+<!-- Video Card 3 -->
+<div class="flex-none w-64 aspect-[9/16] bg-surface-container-highest rounded-xl overflow-hidden relative group snap-start">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Vertical thumbnail showing a modern logistics truck with the company logo being loaded with neatly wrapped stacks of fresh uniforms. Outdoors, bright daylight." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqvbDmb-21mps64V9Fe3GtcagV59QoGp3z_qS0zP9j-rzP88vnKMsLQX0STjNUqsU8NjLeAoIhF7n2vFNCdAnSV8UD0P9xYnmymWea1-Fxp1QB39zSVUGbEpZlsUjvpjbpwGEJOLwuv4hxRpH2WucGNeFnmNou5oHrcKepawfcKJ-8lGWC7QHxSf3OjjeMMeDOscF3JGfdwPX4m4fPUPsIQG-yjd0NAqg_Bz2o5OUNXIrYYHmsO9jO')"></div>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 font-label-caps text-[10px]">ЛОГИСТИКА</div>
+</div>
+<!-- Video Card 4 -->
+<div class="flex-none w-64 aspect-[9/16] bg-surface-container-highest rounded-xl overflow-hidden relative group snap-start">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Vertical video thumbnail of a technician scanning an RFID tag on a work shirt sleeve using a handheld device. Modern tech interface visible. Blue-tinted lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDM9tPH78-zNSA22KRZhC39vJUZtiwysIwGeRtaEtlmgVwIjzyVIKS1vFh4d2YxAwroeygmTP-qAov_ijlI1tq09zPObr69i2LNtFK63nyTTAFDR7AhpJrSCgdxI620byLGUqRTsMTsehxsMha3o-8Dbb7MT5IxUp4coCbNfpzmWJ717s4Ine1fwulEH5J8lMOeTqXwgsrIihrPhp_6AFfLGyZriReNM54YjVvJNHS7tox75oCDOc0j')"></div>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 font-label-caps text-[10px]">RFID-КОНТРОЛЬ</div>
+</div>
+<!-- Video Card 5 -->
+<div class="flex-none w-64 aspect-[9/16] bg-surface-container-highest rounded-xl overflow-hidden relative group snap-start">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Vertical thumbnail of an automated folding machine rapidly processing white shirts, stacking them perfectly. Clinical, fast-paced environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsftmG_PCPQwyjdHQEXOzoCbZuudQLQamalLxm-F8FpYWPgEhqI2p78Tdw-y-c-CmshFCIdLcrRqHIby7q6PuLkscz06pW9XELDWpL6OEMJW_JSp8owaUPcqdtM-V9b5OdqIvQarG4EtULXuy8DKXI8KxkY3VCff-fmOZXixUJbuVNuNv_eadRAN-luGwlTDO2nwZVPbDa7ELp5utvGDL07A_-uQYpVjSJ7liWH72EisMZ2MVL5gH8')"></div>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 font-label-caps text-[10px]">СКЛАД</div>
+</div>
+<!-- Video Card 6 -->
+<div class="flex-none w-64 aspect-[9/16] bg-surface-container-highest rounded-xl overflow-hidden relative group snap-start">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Vertical video showing a quality control specialist inspecting a high-visibility jacket under bright laboratory lights. Focus on detail and safety standards." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCaPwrroWgGkLLbT2WZKhiY7aWJ82XmYzWiBF5q-JYb8gMaUHIHBDBPNzlpfldh489GIR6w8EIpOSwtkUTM3_3QujQxY-LREhIuAbu7qI3ir1Ny0TfW9YKt27AvNgHV4sSPXMXHQkINItCvMkHjP_ir-V7dbCE5kEHLQRrJBbzChzm7l45CLucjHzaYxXvbDb4uxjNPX5sXtuk6Mx34_gvZKo8q-Bvam91TiTHKR7nhIOffsEnPs5M5')"></div>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl opacity-80 group-hover:scale-110 transition-transform">play_circle</span>
+</div>
+<div class="absolute bottom-4 left-4 font-label-caps text-[10px]">ПРОВЕРКА КАЧЕСТВА</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="py-section-padding-desktop bg-white">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Нам доверяют лидеры</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Отзывы тех, кто уже оценил преимущества аренды спецодежды.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-surface-container-low p-8 border border-outline-variant rounded-lg relative">
+<div class="text-attention-blue mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8">"Переход на аренду с МЕТРОХИМ позволил нам полностью снять вопрос закупки и хранения. Сервис безупречен, комплекты всегда чистые и в отличном состоянии."</p>
+<div class="flex items-center gap-4 border-t border-outline-variant pt-6">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center font-bold text-primary">АК</div>
+<div>
+<div class="font-bold text-primary">Алексей Кузнецов</div>
+<div class="text-xs font-label-caps text-on-surface-variant">Закупщик, «ТехноСтрой»</div>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-low p-8 border border-outline-variant rounded-lg relative">
+<div class="text-attention-blue mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8">"Для нашего фармацевтического производства критически важна стерильность. МЕТРОХИМ полностью соответствует всем международным стандартам чистоты."</p>
+<div class="flex items-center gap-4 border-t border-outline-variant pt-6">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center font-bold text-primary">МС</div>
+<div>
+<div class="font-bold text-primary">Марина Соколова</div>
+<div class="text-xs font-label-caps text-on-surface-variant">Гл. технолог, «ФармЛайн»</div>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-low p-8 border border-outline-variant rounded-lg relative">
+<div class="text-attention-blue mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface italic mb-8">"Логистика работает как часы. Ни разу не было задержки с доставкой. Сотрудники выглядят презентабельно, что важно для имиджа нашего отеля."</p>
+<div class="flex items-center gap-4 border-t border-outline-variant pt-6">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center font-bold text-primary">ДВ</div>
+<div>
+<div class="font-bold text-primary">Дмитрий Волков</div>
+<div class="text-xs font-label-caps text-on-surface-variant">Директор, Grand Palace Hotel</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-padding-desktop pb-unit bg-deep-navy text-white">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col gap-6">
+<div class="text-headline-md font-bold text-white">МЕТРОХИМ</div>
+<p class="text-surface-variant/70 text-sm">Профессиональный сервис по аренде и обслуживанию спецодежды. Ваш надежный партнер в индустриальном текстиле.</p>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-primary-fixed">Навигация</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-surface-variant/80 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300" href="#">Услуги</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300" href="#">Отрасли</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300" href="#">Цены</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300" href="#">О компании</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-primary-fixed">Клиентам</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-surface-variant/80 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300" href="#">Контакты</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300" href="#">Карта сайта</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300" href="#">Политика конфиденциальности</a></li>
+<li><a class="text-surface-variant/80 hover:text-white transition-colors hover:translate-x-1 inline-block duration-300" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6 text-primary-fixed">Контакты</h4>
+<div class="flex flex-col gap-4 text-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-attention-blue">location_on</span>
+<span class="text-surface-variant/80">Санкт-Петербург, ул. Промышленная, 14</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-attention-blue">call</span>
+<span class="text-surface-variant/80">+7 (812) 555-01-99</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-attention-blue">schedule</span>
+<span class="text-surface-variant/80">Пн-Пт: 09:00 - 18:00</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-20 pt-8 border-t border-white/10">
+<p class="text-surface-variant/60 text-xs text-center">© 2024 МЕТРОХИМ. Аренда и обслуживание спецодежды. Все права защищены.</p>
+</div>
+</footer>
+<script>
+        // Smooth scroll implementation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body></html>
