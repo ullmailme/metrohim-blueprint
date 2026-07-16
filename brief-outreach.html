@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>МЕТРОХИМ — План прямой рассылки по ЛПР</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2038;
+    --navy-mid:#2c4370;
+    --ink:#101826;
+    --blue:#1e4fa3;
+    --muted-blue:#aebbd0;
+    --body:#5b6472;
+    --tint:#eef3f9;
+    --hairline:#e3e8ef;
+    --surface:#f7f9fc;
+    --gold:#d99a3d;
+    --green:#1f7a55;
+    --red:#b3402f;
+    --sans:"Manrope","Segoe UI",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --display:"Outfit","Segoe UI",-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:var(--sans);
+    color:var(--body);
+    background:#fff;
+    line-height:1.62;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 clamp(18px,5vw,56px)}
+
+  /* ---------- HERO ---------- */
+  .hero{background:var(--navy);color:#fff;padding:clamp(44px,7vw,84px) 0 clamp(38px,6vw,64px)}
+  .eyebrow{
+    font-family:var(--display);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted-blue);font-weight:600;margin-bottom:18px
+  }
+  .hero h1{
+    font-family:var(--display);font-weight:700;color:#fff;
+    font-size:clamp(29px,4.4vw,50px);line-height:1.08;letter-spacing:-.02em;max-width:19ch
+  }
+  .hero h1 em{font-style:italic;font-weight:400;color:var(--muted-blue)}
+  .hero p.lede{margin-top:22px;max-width:64ch;color:#c9d5e6;font-size:clamp(15px,1.5vw,18px)}
+  .hero-meta{
+    margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);
+    display:flex;flex-wrap:wrap;gap:28px 44px
+  }
+  .hero-meta div{min-width:120px}
+  .hero-meta dt{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-blue);margin-bottom:5px}
+  .hero-meta dd{font-family:var(--display);font-size:15px;color:#fff;font-weight:500}
+
+  /* ---------- SECTION ---------- */
+  section{padding:clamp(44px,6vw,76px) 0;border-bottom:1px solid var(--hairline)}
+  section:last-of-type{border-bottom:none}
+  .sec-num{
+    font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.16em;
+    color:var(--blue);text-transform:uppercase;margin-bottom:14px;display:block
+  }
+  h2{
+    font-family:var(--display);font-weight:700;color:var(--ink);
+    font-size:clamp(23px,2.9vw,34px);line-height:1.16;letter-spacing:-.015em;margin-bottom:16px;max-width:24ch
+  }
+  h3{
+    font-family:var(--display);font-weight:600;color:var(--ink);
+    font-size:clamp(17px,1.8vw,21px);line-height:1.3;margin:34px 0 12px;letter-spacing:-.01em
+  }
+  h4{font-family:var(--display);font-weight:600;color:var(--ink);font-size:15px;margin:20px 0 8px}
+  p{margin-bottom:14px;max-width:78ch}
+  .sec-lede{font-size:clamp(15px,1.4vw,17px);color:var(--body);max-width:74ch;margin-bottom:8px}
+  a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(30,79,163,.3)}
+  a:hover{border-bottom-color:var(--blue)}
+  strong{color:var(--ink);font-weight:600}
+  ul,ol{margin:0 0 16px 0;padding-left:20px;max-width:78ch}
+  li{margin-bottom:8px}
+  li::marker{color:var(--blue)}
+
+  /* ---------- CALLOUT ---------- */
+  .callout{
+    background:var(--tint);border-left:3px solid var(--blue);
+    padding:20px 24px;margin:22px 0;border-radius:0 6px 6px 0
+  }
+  .callout.warn{background:#fdf4f2;border-left-color:var(--red)}
+  .callout.gold{background:#fdf8ef;border-left-color:var(--gold)}
+  .callout p:last-child{margin-bottom:0}
+  .callout .tag{
+    font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--blue);display:block;margin-bottom:7px
+  }
+  .callout.warn .tag{color:var(--red)}
+  .callout.gold .tag{color:var(--gold)}
+
+  /* ---------- STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:1px;background:var(--hairline);border:1px solid var(--hairline);margin:28px 0;border-radius:6px;overflow:hidden}
+  .stat{background:#fff;padding:22px}
+  .stat .n{font-family:var(--display);font-size:clamp(24px,2.6vw,32px);font-weight:700;color:var(--navy);line-height:1;letter-spacing:-.02em}
+  .stat .l{font-size:13px;margin-top:8px;color:var(--body);line-height:1.45}
+
+  /* ---------- WEDGE CARDS ---------- */
+  .wedges{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:18px;margin:26px 0}
+  .wedge{border:1px solid var(--hairline);border-radius:8px;padding:24px;background:var(--surface)}
+  .wedge .icon{
+    width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:var(--display);
+    font-weight:700;font-size:14px;margin-bottom:14px
+  }
+  .wedge h4{margin:0 0 8px;font-size:16px}
+  .wedge p{font-size:14px;margin-bottom:0;color:var(--body)}
+
+  /* ---------- TABLE ---------- */
+  .t-scroll{overflow-x:auto;margin:22px 0;border:1px solid var(--hairline);border-radius:8px}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+  th{
+    background:var(--navy);color:#fff;font-family:var(--display);font-weight:600;
+    text-align:left;padding:13px 16px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    vertical-align:bottom
+  }
+  td{padding:13px 16px;border-top:1px solid var(--hairline);vertical-align:top;line-height:1.5}
+  tbody tr:nth-child(even){background:var(--surface)}
+  td strong{color:var(--ink)}
+
+  .pill{
+    display:inline-block;font-family:var(--display);font-size:10.5px;font-weight:700;
+    letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px;white-space:nowrap
+  }
+  .p-hot{background:#fdece9;color:var(--red)}
+  .p-warm{background:#fdf8ef;color:#8a6220}
+  .p-cool{background:var(--tint);color:var(--navy-mid)}
+  .p-a{background:#e8f3ee;color:var(--green)}
+
+  /* ---------- EMAIL ---------- */
+  .email{
+    border:1px solid var(--hairline);border-radius:8px;overflow:hidden;margin:24px 0;background:#fff
+  }
+  .email-head{background:var(--surface);border-bottom:1px solid var(--hairline);padding:16px 22px}
+  .email-head .who{font-family:var(--display);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:6px}
+  .email-head .subj{font-family:var(--display);font-size:16px;color:var(--ink);font-weight:600}
+  .email-head .subj span{color:var(--body);font-weight:400;font-size:13px;display:block;margin-top:4px}
+  .email-body{padding:22px}
+  .email-body p{font-size:14.5px;margin-bottom:12px;max-width:70ch}
+  .email-why{background:var(--tint);padding:14px 22px;border-top:1px solid var(--hairline);font-size:13px}
+  .email-why b{font-family:var(--display);color:var(--navy);letter-spacing:.05em;font-size:11px;text-transform:uppercase;display:block;margin-bottom:5px}
+  .ph{background:#fdf8ef;color:#8a6220;padding:0 4px;border-radius:3px;font-weight:600}
+
+  /* ---------- INDUSTRY BLOCK ---------- */
+  .ind{margin:38px 0 0;padding-top:34px;border-top:2px solid var(--navy)}
+  .ind:first-of-type{border-top:none;padding-top:0;margin-top:22px}
+  .ind-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .ind-head h3{margin:0;font-size:clamp(19px,2.1vw,24px)}
+  .ind-sub{font-size:14px;color:var(--body);max-width:76ch;margin-bottom:4px}
+
+  .roles{background:var(--surface);border:1px solid var(--hairline);border-radius:8px;padding:18px 22px;margin:18px 0}
+  .roles h4{margin:0 0 10px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+  .roles ul{margin:0;padding-left:18px}
+  .roles li{font-size:14px;margin-bottom:6px}
+
+  /* ---------- STEPS ---------- */
+  .steps{counter-reset:s;margin:24px 0;padding:0;list-style:none}
+  .steps li{
+    counter-increment:s;position:relative;padding-left:44px;margin-bottom:18px;max-width:76ch
+  }
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:1px;width:28px;height:28px;border-radius:50%;
+    background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:var(--display);font-weight:700;font-size:13px
+  }
+  .steps li b{font-family:var(--display);color:var(--ink);display:block;margin-bottom:2px;font-size:15px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy);color:var(--muted-blue);padding:44px 0;font-size:13px}
+  footer h4{color:#fff;font-size:14px;margin:0 0 12px}
+  footer a{color:#c9d5e6;border-bottom-color:rgba(255,255,255,.25)}
+  footer a:hover{color:#fff}
+  .src{columns:2;column-gap:36px;font-size:12.5px;line-height:1.7}
+  .src li{margin-bottom:6px;break-inside:avoid}
+  .foot-note{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;color:#8fa0ba;max-width:80ch}
+
+  @media (max-width:640px){
+    .src{columns:1}
+    .hero-meta{gap:20px 28px}
+  }
+  @media print{
+    .hero,footer{background:#fff!important;color:#000!important}
+    .hero h1,.hero-meta dd,footer h4{color:#000!important}
+    section{page-break-inside:avoid;border-bottom:1px solid #ccc}
+    th{background:#e5e5e5!important;color:#000!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">ООО «Метрохим» · Прямая рассылка по ЛПР · Июль 2026</div>
+    <h1>Письма тем, кто<br>подписывает договор <em>на химчистку спецодежды</em></h1>
+    <p class="lede">
+      План адресной рассылки: отрасли, роли ЛПР, шаблоны писем, 25 компаний-мишеней
+      по Санкт-Петербургу и области, и техника, которая делает канал рабочим.
+      Канал закрывает прямое требование: <strong style="color:#fff">нужны каналы помимо тендеров</strong>.
+    </p>
+    <dl class="hero-meta">
+      <div><dt>Услуга-фокус</dt><dd>Промышленная химчистка</dd></div>
+      <div><dt>Гео</dt><dd>СПб + Ленобласть</dd></div>
+      <div><dt>Мишеней в списке</dt><dd>25 компаний / 5 отраслей</dd></div>
+      <div><dt>Тендеры</dt><dd style="color:#e79b8c">Исключены</dd></div>
+      <div><dt>Целевой штат</dt><dd>50 – 1 500 чел.</dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- ============ 1. ЗАЧЕМ ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">01 · Рамка</span>
+    <h2>Почему этот канал вообще сработает</h2>
+    <p class="sec-lede">
+      Рассылка «здравствуйте, мы прачечная, давайте сотрудничать» не работает — таких писем ЛПР получает
+      десяток в неделю. Работает письмо, которое попадает в конкретную боль конкретной роли.
+      Ниже — рыночные факты, которые дают нам эти боли.
+    </p>
+
+    <div class="stats">
+      <div class="stat"><div class="n">50 млрд ₽</div><div class="l">рынок текстильного сервиса РФ в 2025, рост ~9% в год</div></div>
+      <div class="stat"><div class="n">5% против 50%</div><div class="l">проникновение сервисной модели в РФ против Европы — рынок почти не занят</div></div>
+      <div class="stat"><div class="n">65%</div><div class="l">спроса — корпоративный: HoReCa, медицина, промтекстиль</div></div>
+      <div class="stat"><div class="n">1 500+</div><div class="l">штат, при котором своя прачечная начинает окупаться. Ниже — проигрывает аутсорсу</div></div>
+    </div>
+
+    <div class="callout gold">
+      <span class="tag">Главная стратегическая находка</span>
+      <p>
+        Лидер рынка <strong>Lindaily занимает более 54%</strong> — но это рынок <strong>аренды</strong>.
+        Ассоциация «СИЗ» прямо называет главный барьер аренды: <em>«психологический фактор — укоренившаяся
+        привычка покупать продукт»</em>. Предприятие не хочет отдавать свой гардероб и переходить на чужую модель владения.
+      </p>
+      <p style="margin-top:10px">
+        <strong>Химчистка Метрохима — это аутсорсинг без смены модели владения.</strong> Мы не просим клиента
+        ничего менять: одежда остаётся его, капзатрат ноль, договор можно закончить. Мы продаём тот же
+        операционный результат, что и аренда, но с нулевым порогом входа. Это и есть угол атаки на 95%
+        непроникнутого рынка — и он бьёт в тот самый барьер, о который спотыкается Lindaily.
+      </p>
+    </div>
+
+    <h3>Три клина, на которых строятся все письма</h3>
+    <div class="wedges">
+      <div class="wedge">
+        <div class="icon">1</div>
+        <h4>Масло, которое не берёт вода</h4>
+        <p>
+          У Метрохима стоят немецкие <strong>BÖWE</strong> — это чистка на растворителе
+          (перхлорэтилен / углеводород), а не водная стирка. Растворитель растворяет жир: масло, СОЖ, ГСМ, битум.
+          Обычная прачечная такое возвращает серым. Технический разговор вместо ценового — уход от демпинга.
+        </p>
+      </div>
+      <div class="wedge">
+        <div class="icon">2</div>
+        <h4>Пропитка смывается за 2–3 стирки</h4>
+        <p>
+          Огнезащитная, антистатическая, масло-бензостойкая пропитка уходит от бытового порошка
+          <strong>за 2–3 цикла</strong>. СИЗ на балансе числится, а фактически уже не защищает.
+          Это письмо не про деньги — про риск. Адресат: охрана труда.
+        </p>
+      </div>
+      <div class="wedge">
+        <div class="icon">3</div>
+        <h4>Своя прачечная — деньги в никуда</h4>
+        <p>
+          CAPEX 4–7 млн ₽ и OPEX 2,8–4,7 млн ₽/год против 1–1,4 млн ₽ на аутсорсе.
+          Окупается от 1 500 чел. штата. При 50–500 аутсорс выгоднее почти всегда.
+          Адресат: производство, АХО, финансы.
+        </p>
+      </div>
+    </div>
+
+    <h3>Чем Метрохим бьёт «Хлорку» — главного конкурента в СПб</h3>
+    <p class="sec-lede">
+      «Хлорка» — сильный соперник с работающей контент-машиной (TCO-калькулятор, PDF, статьи) и клиентами уровня
+      Петербургского тракторного завода, «Пелла-Маш» и «Лукойла». Но в её же публичной оферте есть две дыры,
+      которые Метрохим закрывает своими реальными условиями:
+    </p>
+    <div class="t-scroll">
+      <table>
+        <thead>
+          <tr><th style="width:20%">Параметр</th><th style="width:32%">«Хлорка» (из открытого прайса)</th><th style="width:30%">МЕТРОХИМ</th><th style="width:18%">Что это даёт в письме</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Цена в договоре</strong></td>
+            <td>Фиксация на 12 мес. Пересмотр не чаще раза в полгода, до +10%</td>
+            <td><strong>Договор до 5 лет</strong> с зафиксированными условиями</td>
+            <td>Аргумент для финдира и закупок: бюджет перестаёт прыгать</td>
+          </tr>
+          <tr>
+            <td><strong>Подменный фонд</strong></td>
+            <td>В прайсе не заявлен</td>
+            <td><strong>Резервный фонд 5–10%</strong> от парка комплектов</td>
+            <td>Закрывает вопрос «в чём работник ходит, пока роба в стирке»</td>
+          </tr>
+          <tr>
+            <td><strong>Технология</strong></td>
+            <td>Промышленная стирка, RFID-сортировка в базовой цене</td>
+            <td><strong>Miele + BÖWE + Veit</strong>: растворитель, а не только вода</td>
+            <td>Масляные загрязнения — там, где вода бессильна</td>
+          </tr>
+          <tr>
+            <td><strong>Ресурс одежды</strong></td>
+            <td>Не заявлен</td>
+            <td><strong>Не менее 50 циклов</strong> без потери защитных свойств и цвета</td>
+            <td>Считаем не цену стирки, а стоимость владения комплектом</td>
+          </tr>
+          <tr>
+            <td><strong>Порог входа</strong></td>
+            <td>Мин. партия 4 000 ₽; летняя от 256 ₽/кг, зимняя от 355 ₽/кг</td>
+            <td><strong>Бесплатная пробная чистка</strong> (уже действующий оффер)</td>
+            <td>Главный CTA рассылки — см. раздел 04</td>
+          </tr>
+          <tr>
+            <td><strong>RFID / цифра</strong></td>
+            <td>Есть, включён в базовую цену</td>
+            <td>Пока нет <span class="pill p-hot">разрыв</span></td>
+            <td>Не поднимать тему первыми. Если клиент спросит — см. раздел 07</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="tag">Гео-преимущество, которое почти никто не использует</span>
+      <p>
+        Производство на <strong>пр. Стачек, 100</strong> — это середина Кировского промышленного пояса.
+        Кировский завод, Северная верфь, Автово, Нарвская застава, порт, Красносельский и Московский районы —
+        всё в пределах 15–20 минут хода машины. Логистика — половина себестоимости услуги и главный источник
+        срывов графика. Первую волну рассылки имеет смысл вести <strong>радиусом от Стачек, а не по алфавиту</strong>:
+        «мы ближе к вашей проходной, чем ваша нынешняя прачечная» — это проверяемое, конкретное и не копируемое
+        конкурентом из другого района преимущество.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. ОТРАСЛИ ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">02 · Отрасли</span>
+    <h2>Кому писать и почему именно им</h2>
+    <p class="sec-lede">
+      Отрасли отсортированы по привлекательности для рассылки, а не по размеру. Учтены два фильтра:
+      <strong>(1)</strong> компания должна иметь право заключить прямой договор без конкурсной процедуры —
+      госпредприятия, ГУПы и структуры ОСК отсеиваются, потому что тендеры для нас закрыты;
+      <strong>(2)</strong> штат 50–1 500 человек — сладкая зона, где своя прачечная не окупается, а объём уже интересен.
+    </p>
+
+    <div class="t-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:4%">#</th><th style="width:22%">Отрасль</th><th style="width:9%">Приоритет</th>
+            <th style="width:33%">Почему она</th><th style="width:32%">Какой клин работает</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>Машиностроение, металлообработка, судоремонт</strong></td>
+            <td><span class="pill p-hot">Высший</span></td>
+            <td>Ядро промышленности СПб, ~750 крупных и средних предприятий. Роба в масле, СОЖ, мазуте — ровно то, что водная стирка не берёт. Территориально рядом со Стачек.</td>
+            <td>Клин 1 (растворитель) + клин 3 (своя прачечная). Разговор технический.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Пищевая промышленность и переработка</strong></td>
+            <td><span class="pill p-hot">Высший</span></td>
+            <td>Санитария не обсуждается: HACCP, Роспотребнадзор, светлая форма, видимая грязь = остановка линии. Стирать дома нельзя в принципе.</td>
+            <td>Гигиена + отдельное помещение для светлых тканей + регулярность графика.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Фарма и биотех</strong></td>
+            <td><span class="pill p-warm">Высокий*</span></td>
+            <td>По оценке Ассоциации «СИЗ» — <strong>отрасль №1 по потенциалу</strong> текстильного сервиса. В СПб кластер из 165+ компаний. Но есть важная оговорка ниже.</td>
+            <td>Гигиена + документируемость процесса. Целимся во вспомогательный контур, не в чистые зоны.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Транспорт, логистика, автопарки, СТО</strong></td>
+            <td><span class="pill p-warm">Высокий</span></td>
+            <td>Недооценённый сегмент: ГСМ и масло на робе механиков, много мелких частных игроков без своей прачечной и без длинных процедур согласования.</td>
+            <td>Клин 1 (растворитель). Короткий цикл сделки, решение принимает один человек.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>HoReCa: отели, рестораны, кейтеринг</strong></td>
+            <td><span class="pill p-cool">Средний</span></td>
+            <td>65% рынка текстильного сервиса — B2B, и HoReCa в тройке. Высокая текучесть, форма — часть имиджа. Но крупные отели часто со своей прачечной.</td>
+            <td>Имидж + скорость оборота. Целимся в сети ресторанов, а не в отели-гиганты.</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Частная медицина и лаборатории</td>
+            <td><span class="pill p-cool">Средний</span></td>
+            <td>Резерв второй волны. Сети клиник и лабораторий, много точек — логистика сложнее, объём на точку мал.</td>
+            <td>Дезинфекция + сетевая масштабируемость.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Строительство</td>
+            <td><span class="pill p-cool">Отложить</span></td>
+            <td><strong>Сознательно понижен.</strong> Ассоциация «СИЗ» прогнозирует сокращение закупок СИЗ в строительстве до 30% в 2026. Плюс вахтовый персонал и слабая платёжная дисциплина.</td>
+            <td>Не тратить первую волну. Вернуться, когда отработают отрасли 1–5.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <span class="tag">* Честная оговорка по фарме — прочитать до отправки писем</span>
+      <p>
+        Фарма — отрасль №1 по потенциалу, но <strong>одежда для чистых помещений (GMP, классы ISO) требует
+        стирки в специализированной прачечной с валидированным процессом и собственной чистой зоной</strong>.
+        Если у Метрохима такой зоны и валидации нет — обещать обработку одежды чистых помещений нельзя:
+        первый же вопрос технолога это вскроет, и мы потеряем не только сделку, но и репутацию в кластере,
+        где все друг друга знают.
+      </p>
+      <p style="margin-top:10px">
+        <strong>Правильный заход в фарму:</strong> вспомогательный контур, которого много и о котором никто не думает —
+        склад и логистика, инженерная служба, ремонтники, энергетики, водители, охрана, вспомогательное
+        производство и упаковка вне чистых зон. Это реальный объём, законный для нас, и он же — дверь.
+        Зайти через склад, показать работу, потом обсуждать остальное.
+        <em>Открытый вопрос к вам: есть ли у Метрохима чистая зона и валидация процесса?</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. ЛПР ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">03 · Роли</span>
+    <h2>Кто на самом деле решает</h2>
+    <p class="sec-lede">
+      Решение о договоре на стирку почти никогда не принимает один человек, и почти никогда — тот, кому мы пишем первым.
+      Классическая схема: <strong>инициирует</strong> охрана труда или АХО служебной запиской → <strong>считает</strong>
+      снабжение/финансы → <strong>подписывает</strong> директор. Наша задача в письме — не «продать»,
+      а вооружить инициатора аргументом, с которым он пойдёт наверх.
+    </p>
+
+    <div class="t-scroll">
+      <table>
+        <thead>
+          <tr><th style="width:22%">Роль</th><th style="width:12%">Функция</th><th style="width:34%">Что его болит</th><th style="width:32%">Чем цепляем</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Специалист / руководитель службы охраны труда</strong><br><span style="font-size:12.5px">Инженер по ОТ, начальник ООТиПБ</span></td>
+            <td><span class="pill p-a">Инициатор</span></td>
+            <td>Отвечает головой за то, что СИЗ реально защищает. Боится проверки: по чек-листу № 22 Роструда инспектор смотрит, организована ли стирка за счёт работодателя и есть ли договор с подрядчиком. Знает, что рабочие стирают дома, и знает, что так нельзя.</td>
+            <td>Риск, не деньги. Пропитка смывается за 2–3 цикла. Резервный фонд 5–10% — чтобы человек не остался без защиты. Готовый регламент и образец договора — мы делаем его работу за него.</td>
+          </tr>
+          <tr>
+            <td><strong>Начальник АХО / завхоз</strong></td>
+            <td><span class="pill p-a">Инициатор</span></td>
+            <td>На нём физически висит грязная роба: где хранить, кто повезёт, кто пересчитает, кто пришьёт пуговицу. Ему нужно, чтобы вопрос просто исчез.</td>
+            <td>«Забираем и привозим по графику сами, с накладными». Мешки и вешалки — наши. Мелкий ремонт входит.</td>
+          </tr>
+          <tr>
+            <td><strong>Директор по производству / главный инженер</strong></td>
+            <td><span class="pill p-hot">Решает</span></td>
+            <td>Прачечная в его периметре — это люди, поломки, вентиляция и площадь, которую можно занять производством. Простой из-за грязной робы = простой участка.</td>
+            <td>TCO: своя прачечная окупается от 1 500 чел. Освобождение площади и штатных единиц. График без срывов.</td>
+          </tr>
+          <tr>
+            <td><strong>Руководитель отдела снабжения / закупок</strong></td>
+            <td><span class="pill p-hot">Решает</span></td>
+            <td>Ему нужна предсказуемая цена и подрядчик, который не сорвёт график и правильно оформит документы.</td>
+            <td><strong>Фиксация цены договором до 5 лет.</strong> Прямой удар по конкуренту с пересмотром +10% каждые полгода.</td>
+          </tr>
+          <tr>
+            <td><strong>Финансовый директор</strong></td>
+            <td><span class="pill p-warm">Влияет</span></td>
+            <td>CAPEX на прачечную против OPEX на услугу. Замороженные деньги в оборудовании.</td>
+            <td>Ноль капзатрат, перевод в операционные расходы, предсказуемость на 5 лет.</td>
+          </tr>
+          <tr>
+            <td><strong>Генеральный директор</strong></td>
+            <td><span class="pill p-hot">Подписывает</span></td>
+            <td>Не хочет вникать. Хочет, чтобы принесли готовое решение с расчётом.</td>
+            <td>Писать напрямую только в компаниях до ~100 человек. В крупных — через инициатора.</td>
+          </tr>
+          <tr>
+            <td><strong>Технолог / шеф-повар / зав. производством</strong><br><span style="font-size:12.5px">Пищёвка, HoReCa</span></td>
+            <td><span class="pill p-a">Инициатор</span></td>
+            <td>Санитарный контроль, чистота формы на линии, замечания проверяющих.</td>
+            <td>Отдельное помещение для светлых тканей. График под смены. Дезинфекция.</td>
+          </tr>
+          <tr>
+            <td><strong>Ответственный за уход за СИЗ</strong><br><span style="font-size:12.5px">Назначается приказом</span></td>
+            <td><span class="pill p-a">Точка входа</span></td>
+            <td>Конкретный человек, назначенный приказом принимать грязные СИЗ, передавать подрядчику и контролировать качество.</td>
+            <td><strong>Идеальный первый адресат.</strong> Он уже назначен, уже мучается и уже ищет решение. Спросить в приёмной: «кто у вас приказом назначен ответственным за уход за СИЗ?»</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <span class="tag">Приём</span>
+      <p>
+        Формулировка <em>«кто у вас приказом назначен ответственным за уход за СИЗ?»</em> в разговоре с секретарём
+        работает лучше, чем «соедините с руководством». Она звучит как вопрос от того, кто в теме, у неё есть
+        единственный правильный ответ, и секретарю проще назвать фамилию, чем разбираться.
+        Это самый дешёвый способ превратить компанию в имя.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. ПИСЬМА ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">04 · Шаблоны</span>
+    <h2>Три письма под три разные боли</h2>
+    <p class="sec-lede">
+      Правила, по которым они написаны: до 120 слов, один адресат, одна мысль, один вопрос в конце.
+      Без вложений и презентаций в первом касании — PDF в холодном письме режется фильтрами и не читается.
+      <span class="ph">Жёлтым</span> — то, что подставляется под конкретную компанию: без этого письмо
+      превращается в спам.
+    </p>
+
+    <div class="callout gold">
+      <span class="tag">Главный оффер рассылки</span>
+      <p>
+        <strong>Не просим встречу. Просим пять грязных комплектов.</strong> Пробная чистка у Метрохима уже есть —
+        и это идеальный CTA для холодного письма. Встреча стоит ЛПР час и обязательство; отдать пять безнадёжных
+        роб не стоит ему ничего. А дальше работает физика: <strong>чистый комплект возвращается на стол человеку,
+        который был уверен, что его отстирать нельзя.</strong> Это не аргумент в письме — это доказательство в руках.
+        Продажа делается сама, наша задача — довезти артефакт.
+      </p>
+    </div>
+
+    <!-- письмо 1 -->
+    <div class="email">
+      <div class="email-head">
+        <div class="who">Письмо 1 · Машиностроение, судоремонт, автопарки, СТО → главный инженер / нач. цеха / ОТ</div>
+        <div class="subj">Тема: масло на робе после стирки
+          <span>Альтернативы: «роба цеха № 3» · «спецодежда в масле — вопрос по подрядчику»</span></div>
+      </div>
+      <div class="email-body">
+        <p><span class="ph">Игорь Витальевич</span>, здравствуйте.</p>
+        <p>Вопрос по спецодежде <span class="ph">механического цеха</span>. Если робу в масле и СОЖ стирают водой —
+        она возвращается серой, и через 3–4 цикла комплект списывают, хотя ткань ещё целая. Платите за новый.</p>
+        <p>У нас на Стачек, 100 стоят немецкие BÖWE — это чистка на растворителе, а не стирка. Растворитель
+        растворяет жир: масло, ГСМ, битум уходят. После нашей обработки одежда держит не меньше 50 циклов
+        без потери защитных свойств.</p>
+        <p><strong>Предложение: отдайте нам 5 самых безнадёжных комплектов.</strong> Заберём сами, вернём чистыми
+        за свой счёт — сравните с тем, что даёт нынешний подрядчик. Не убедит — вы потеряли одну поездку нашего водителя.</p>
+        <p>Присылать машину на этой неделе?</p>
+        <p style="color:var(--body);font-size:13px">Кирилл, МЕТРОХИМ · пр. Стачек, 100 · +7 (812) 748-53-48</p>
+      </div>
+      <div class="email-why">
+        <b>Почему работает</b>
+        Технический разговор, а не ценовой — мы не конкурируем рублём за килограмм. «5 безнадёжных комплектов» —
+        это вызов, на который у инженера есть азарт ответить: у него такие точно есть, и он уверен, что их не отстирать.
+        Мы забираем весь риск и всю логистику. Отказать почти не на чем.
+      </div>
+    </div>
+
+    <!-- письмо 2 -->
+    <div class="email">
+      <div class="email-head">
+        <div class="who">Письмо 2 · Любая отрасль с пропитанной спецодеждой → охрана труда</div>
+        <div class="subj">Тема: огнестойкая роба после домашней стирки
+          <span>Альтернативы: «пропитка на спецодежде <span class="ph">завода</span>» · «вопрос по уходу за СИЗ»</span></div>
+      </div>
+      <div class="email-body">
+        <p><span class="ph">Марина Сергеевна</span>, здравствуйте.</p>
+        <p>Короткий вопрос как специалисту по охране труда: где сейчас стирается ваша спецодежда с пропиткой —
+        огнезащитной, антистатической, масло-бензостойкой?</p>
+        <p>Если дома у работников или обычным порошком — <strong>пропитка смывается за 2–3 цикла</strong>.
+        На балансе СИЗ есть, по факту он уже не защищает. При этом инспектор смотрит ровно две вещи:
+        организован ли уход за счёт работодателя и есть ли договор с подрядчиком — плюс в чём человек работает,
+        пока его комплект в обработке.</p>
+        <p>Мы закрываем оба пункта: договор со всеми актами и накладными, плюс <strong>резервный фонд 5–10%</strong>
+        комплектов, чтобы подмена была всегда.</p>
+        <p>Скинуть наш регламент обработки и образец договора — посмотрите, закрывает ли он ваши позиции?</p>
+        <p style="color:var(--body);font-size:13px">Кирилл, МЕТРОХИМ · +7 (812) 748-53-48</p>
+      </div>
+      <div class="email-why">
+        <b>Почему работает</b>
+        Это письмо не продаёт стирку — оно продаёт спокойствие перед проверкой, а это то, чем специалист по ОТ
+        живёт. Финальный вопрос просит не денег и не встречи, а экспертной оценки нашего документа: ответить
+        «пришлите» легко и ни к чему не обязывает. Дальше мы уже в переписке, а не в холоде.
+      </div>
+    </div>
+
+    <!-- письмо 3 -->
+    <div class="email">
+      <div class="email-head">
+        <div class="who">Письмо 3 · У компании есть своя прачечная → директор по производству / АХО / финдиректор</div>
+        <div class="subj">Тема: прачечная <span class="ph">«Комбината»</span> — посчитал за вас
+          <span>Альтернативы: «увидел вашу вакансию оператора прачечной»</span></div>
+      </div>
+      <div class="email-body">
+        <p><span class="ph">Андрей Николаевич</span>, здравствуйте.</p>
+        <p>Увидел, что вы <span class="ph">ищете оператора прачечной</span> — значит, стираете спецодежду сами.</p>
+        <p>Своя прачечная выходит в плюс примерно <strong>от 1 500 человек штата</strong>. Ниже этого порога она
+        обычно проигрывает: оборудование, помещение с вентиляцией и канализацией, ФОТ, химия, вода, ТО — и всё это
+        ваша забота при каждой поломке и каждом увольнении прачки. По рынку это 4–7 млн капитальных и 2,8–4,7 млн в год
+        текущих против 1–1,4 млн на аутсорсе.</p>
+        <p>Мы делаем то же самое услугой: забираем по графику, стираем или чистим на растворителе, чиним мелочь,
+        возвращаем с маркировкой. <strong>Цену фиксируем договором на срок до 5 лет</strong> — бюджет перестаёт прыгать.</p>
+        <p>Пришлю расчёт под ваш объём: сколько примерно комплектов и как часто стираете?</p>
+        <p style="color:var(--body);font-size:13px">Кирилл, МЕТРОХИМ · пр. Стачек, 100 · +7 (812) 748-53-48</p>
+      </div>
+      <div class="email-why">
+        <b>Почему работает</b>
+        Первая строка доказывает, что письмо написано этой компании, а не тысяче адресов — это снимает ярлык спама
+        в первую секунду. Дальше идут чужие деньги и понятная арифметика. Финальный вопрос закрытый и лёгкий:
+        назвать объём проще, чем согласиться на встречу, но ответ на него уже переводит нас в расчёт.
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <span class="tag">Чего в письмах нет намеренно</span>
+      <p>
+        Нет слов «выгодные цены», «индивидуальный подход», «широкий спектр услуг», «лидер рынка», «более 20 лет на рынке»
+        в первом абзаце. Нет прикреплённой презентации. Нет «хотели бы предложить сотрудничество».
+        Всё это — маркеры, по которым ЛПР закрывает письмо, не дочитав, а фильтр отправляет его в спам.
+        Про 20 лет и оборудование скажем позже — когда спросят, кто мы.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. КОНТАКТЫ ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">05 · Мишени</span>
+    <h2>25 компаний: по 5 на отрасль</h2>
+
+    <div class="callout warn">
+      <span class="tag">Прочитать перед использованием списка</span>
+      <p>
+        Ниже — <strong>реальные действующие компании</strong> с их отраслью, профилем и углом захода.
+        <strong>Я намеренно не выдумывал ФИО сотрудников и личные адреса почты.</strong> Правдоподобные,
+        но несуществующие контакты — худшее, что может быть в такой таблице: письма уходят в никуда,
+        база гниёт, домен получает жалобы, а если случайно совпадёт с живым человеком — вы напишете ему
+        с чужой должностью и сожжёте контакт.
+      </p>
+      <p style="margin-top:10px">
+        Поэтому в колонке «Кому писать» — <strong>роль</strong>, а имя добывается за 5 минут по методу из раздела 06.
+        Это не обход задачи, а единственный способ, при котором рассылка вообще доедет до адресата.
+        Приоритет проставлен по трём критериям: тип загрязнения (нужен ли растворитель), возможность прямого
+        договора без конкурса и близость к Стачек.
+      </p>
+    </div>
+
+    <!-- 1 -->
+    <div class="ind">
+      <div class="ind-head"><h3>1 · Машиностроение, металлообработка, судоремонт</h3><span class="pill p-hot">Первая волна</span></div>
+      <p class="ind-sub">Ядро промышленности СПб. Масло, СОЖ, мазут, металлическая стружка — загрязнения под растворитель. Клин 1 + клин 3.</p>
+      <div class="t-scroll">
+        <table>
+          <thead><tr><th style="width:20%">Компания</th><th style="width:9%">Приоритет</th><th style="width:36%">Перспективность</th><th style="width:35%">Как заходить</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>ПАО «Кировский завод»</strong><br><span style="font-size:12px">Пр. Стачек, 47 · kzgroup.ru</span></td>
+              <td><span class="pill p-hot">A+</span></td>
+              <td>Частный холдинг — договор без конкурса возможен. Многотысячный штат, десятки юрлиц-дочек в периметре. <strong>Буквально соседи: 3 км по Стачек.</strong> Своя прачечная скорее всего есть, но не покрывает всё.</td>
+              <td>Не штурмовать холдинг целиком — это годы. Заходить в <strong>отдельную дочку</strong> (литейка, станкостроение, сервис) как в самостоятельное юрлицо. Угол — соседство и логистика: «мы в 10 минутах от вашей проходной». Письмо 1.</td>
+            </tr>
+            <tr>
+              <td><strong>ПАО «Силовые машины»</strong><br><span style="font-size:12px">ЛМЗ, «Электросила», ЗТЛ · power-m.ru</span></td>
+              <td><span class="pill p-hot">A</span></td>
+              <td>Частная (не госзакупки). Турбинное и генераторное производство: масло, изоляционные составы, термостойкая роба у сварщиков. Несколько площадок в городе, «Электросила» — Московский район, рядом.</td>
+              <td>Через ООТиПБ площадки, не через головной офис. Комбинация писем 1 и 2: масло + сохранение защитных свойств у сварщиков.</td>
+            </tr>
+            <tr>
+              <td><strong>ПАО «Ижорские заводы»</strong><br><span style="font-size:12px">Колпино · omzglobal.com</span></td>
+              <td><span class="pill p-warm">B+</span></td>
+              <td>Группа ОМЗ, частный периметр. Тяжёлое машиностроение, металлургия — тяжёлые загрязнения, много спецодежды с пропиткой.</td>
+              <td>Минус — Колпино, это плечо логистики. Заходить только если готовы считать доставку. Письмо 2 (пропитка) сильнее, чем ценовое.</td>
+            </tr>
+            <tr>
+              <td><strong>АО «Армалит»</strong><br><span style="font-size:12px">Судовая арматура · armalit.ru</span></td>
+              <td><span class="pill p-hot">A+</span></td>
+              <td><strong>Лучший профиль в отрасли.</strong> Частная, штат в целевом диапазоне (сотни человек) — своя прачечная точно не окупается. Литьё и мехобработка = масло и СОЖ. Кировский район.</td>
+              <td>Идеальная мишень для письма 1 с пробной чисткой. Решение принимается быстро, лиц в цепочке мало. Начинать волну с таких, а не с гигантов.</td>
+            </tr>
+            <tr>
+              <td><strong>«Невский завод» (РЭП Холдинг)</strong><br><span style="font-size:12px">Обуховская оборона · reph.ru</span></td>
+              <td><span class="pill p-warm">B+</span></td>
+              <td>Частный холдинг, газовые турбины и компрессоры. Масло, испытательные стенды, сварка. Штат целевой.</td>
+              <td>Письмо 1. Заход через главного инженера. Невский район — плечо есть, но терпимое.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roles">
+        <h4>Кому писать в этой отрасли</h4>
+        <ul>
+          <li><strong>Начальник службы охраны труда (ООТиПБ)</strong> — инициатор, боится проверки, письмо 2</li>
+          <li><strong>Главный инженер / начальник цеха</strong> — чувствует боль масла физически, письмо 1</li>
+          <li><strong>Начальник АХО</strong> — на нём логистика робы</li>
+          <li><strong>Руководитель снабжения</strong> — включается на этапе цены, ему — фиксация на 5 лет</li>
+        </ul>
+      </div>
+      <div class="callout warn" style="margin-top:18px">
+        <span class="tag">Кого в этой отрасли НЕ трогать</span>
+        <p>
+          <strong>Балтийский завод, Адмиралтейские верфи, Северная верфь, Кронштадтский морской завод</strong> —
+          контур ОСК: закупки идут по 223-ФЗ, то есть через конкурс. Тендеры для нас закрыты, и это не обсуждается.
+          Писать им — тратить волну впустую. То же касается «Обуховского завода» (Алмаз-Антей) и ГУП «Петербургский метрополитен».
+        </p>
+        <p style="margin-top:8px">
+          <strong>Петербургский тракторный завод и «Пелла-Маш» — уже клиенты «Хлорки»</strong> (она сама указывает их
+          в качестве заказчиков). Это не запрет, но заход туда — это перебивание действующего договора, а не холодная продажа.
+          Другой цикл, другие сроки, другой разговор. В первую волну не ставить — но <strong>занести в отдельный
+          список «перехват»</strong> и вернуться через 8–10 месяцев, ближе к пересмотру их годового контракта:
+          у «Хлорки» цена фиксируется только на 12 месяцев и может расти на 10% каждые полгода — вот там наш
+          пятилетний договор становится убийственным аргументом.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="ind">
+      <div class="ind-head"><h3>2 · Пищевая промышленность и переработка</h3><span class="pill p-hot">Первая волна</span></div>
+      <p class="ind-sub">Санитария — не пожелание, а условие работы. Светлая форма, жир, кровь, мучная пыль. Домашняя стирка исключена в принципе.</p>
+      <div class="t-scroll">
+        <table>
+          <thead><tr><th style="width:20%">Компания</th><th style="width:9%">Приоритет</th><th style="width:36%">Перспективность</th><th style="width:35%">Как заходить</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>ООО «Пискарёвский молочный завод»</strong><br><span style="font-size:12px">piskarevskiy.ru</span></td>
+              <td><span class="pill p-hot">A+</span></td>
+              <td>Частный, один из крупнейших молочных в городе, штат в целевом диапазоне. Молочка = максимальные санитарные требования и светлая форма, которую видно.</td>
+              <td>Заход через <strong>начальника производства или технолога</strong>, не через снабжение. Козырь — <strong>отдельное помещение для светлых тканей</strong>: для молочки это не деталь, а снятие риска перекрёстного загрязнения.</td>
+            </tr>
+            <tr>
+              <td><strong>ОАО «Каравай»</strong><br><span style="font-size:12px">Хлебозаводы СПб · karavay.spb.ru</span></td>
+              <td><span class="pill p-hot">A</span></td>
+              <td>Несколько площадок, круглосуточные смены, большой парк белой формы. Мучная пыль и жир. Частная структура.</td>
+              <td>Угол — <strong>график под смены</strong>: забор и возврат в привязке к пересменке, чтобы форма всегда была. Технолог + АХО.</td>
+            </tr>
+            <tr>
+              <td><strong>ООО «Петрохолод»</strong><br><span style="font-size:12px">Мороженое, полуфабрикаты</span></td>
+              <td><span class="pill p-hot">A+</span></td>
+              <td><strong>Отличный профиль:</strong> частный, целевой штат, холодное производство — форма утеплённая, а её стирка сложнее и дороже. Московский район, близко.</td>
+              <td>Письмо про зимнюю/утеплённую форму: у конкурента она в прайсе заметно дороже летней (355 против 256 ₽/кг) — есть где играть. Пробная чистка.</td>
+            </tr>
+            <tr>
+              <td><strong>ООО «Пит-Продукт»</strong><br><span style="font-size:12px">Мясопереработка, Ломоносов</span></td>
+              <td><span class="pill p-warm">A−</span></td>
+              <td>Мясопереработка — самые тяжёлые органические загрязнения: жир, кровь, белок. Именно то, где обычная стирка не даёт результата и запах остаётся.</td>
+              <td>Ломоносов — но это <strong>наше направление</strong> по Стачек/Петергофскому шоссе, машина и так идёт. Угол — устранение запаха и дезинфекция.</td>
+            </tr>
+            <tr>
+              <td><strong>Мясокомбинат «Парнас-М»</strong><br><span style="font-size:12px">Парнас</span></td>
+              <td><span class="pill p-warm">B</span></td>
+              <td>Крупная мясопереработка, большой парк формы. Те же загрязнения, что у Пит-Продукта.</td>
+              <td>Минус — Парнас, это через весь город от Стачек. Ставить, только когда логистика на север окупится вторым-третьим клиентом в том районе.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roles">
+        <h4>Кому писать в этой отрасли</h4>
+        <ul>
+          <li><strong>Главный технолог / начальник производства</strong> — главный инициатор, отвечает за санитарию линии</li>
+          <li><strong>Специалист по качеству / HACCP</strong> — у него это записано в процедурах</li>
+          <li><strong>Начальник АХО</strong> — держит парк формы и склад</li>
+          <li><strong>Санитарный врач предприятия</strong> — если есть в штате, это самый короткий путь</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="ind">
+      <div class="ind-head"><h3>3 · Фарма и биотех</h3><span class="pill p-warm">Заход через вспомогательный контур</span></div>
+      <p class="ind-sub">Отрасль №1 по потенциалу текстильного сервиса. Кластер СПб — 165+ компаний. Читать оговорку про чистые помещения в разделе 02.</p>
+      <div class="t-scroll">
+        <table>
+          <thead><tr><th style="width:20%">Компания</th><th style="width:9%">Приоритет</th><th style="width:36%">Перспективность</th><th style="width:35%">Как заходить</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>ЗАО «БИОКАД»</strong><br><span style="font-size:12px">Стрельна · biocad.ru</span></td>
+              <td><span class="pill p-warm">B+</span></td>
+              <td>Частная, крупнейший биотех. Огромный вспомогательный контур: склады, инженерка, логистика. <strong>Стрельна — прямо по Петергофскому шоссе от Стачек.</strong></td>
+              <td>Не заикаться про чистые зоны — там валидированный подрядчик и, скорее всего, аренда. Заходить <strong>в склад и инженерную службу</strong>. Угол — «мы соседи, машина и так ходит».</td>
+            </tr>
+            <tr>
+              <td><strong>НТФФ «ПОЛИСАН»</strong><br><span style="font-size:12px">Салова, 72 · polysan.ru</span></td>
+              <td><span class="pill p-warm">B+</span></td>
+              <td>Частная, устойчивая, полный цикл. Целевой штат. Вспомогательный персонал + лаборатории.</td>
+              <td>Через главного инженера или АХО. Письмо про документируемость: акты, накладные, журнал — фарма любит бумагу, и мы её даём.</td>
+            </tr>
+            <tr>
+              <td><strong>ООО «ГЕРОФАРМ»</strong><br><span style="font-size:12px">Пушкин, ОЭЗ · geropharm.ru</span></td>
+              <td><span class="pill p-cool">B</span></td>
+              <td>Частная, растущая (инсулины). Новая площадка = процессы ещё не окаменели, подрядчика можно вписать.</td>
+              <td>Пушкин — плечо. Заходить вместе с «Активным компонентом» одним маршрутом, иначе логистика не сойдётся.</td>
+            </tr>
+            <tr>
+              <td><strong>АО «Вертекс»</strong><br><span style="font-size:12px">ОЭЗ «Новоорловская» · vertex.spb.ru</span></td>
+              <td><span class="pill p-cool">B</span></td>
+              <td>Частная, свой фармкомплекс в ОЭЗ. Приморский район.</td>
+              <td>Дальний угол города — только второй волной. Заход через службу эксплуатации комплекса.</td>
+            </tr>
+            <tr>
+              <td><strong>АО «Активный компонент»</strong><br><span style="font-size:12px">Пушкин · active-component.ru</span></td>
+              <td><span class="pill p-warm">B+</span></td>
+              <td><strong>Производство субстанций (API) — это химия, а не таблетирование.</strong> Реагенты, растворители, агрессивные среды. Загрязнения ближе к промышленным, чем к фармацевтическим.</td>
+              <td>Самая честная мишень в фарме для нас: здесь наш растворитель уместен, а чистые зоны не главное. Письмо 1 + письмо 2 (пропитка, химзащита).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roles">
+        <h4>Кому писать в этой отрасли</h4>
+        <ul>
+          <li><strong>Начальник службы эксплуатации / главный инженер</strong> — владеет вспомогательным контуром, наша дверь</li>
+          <li><strong>Начальник склада и логистики</strong> — его люди в форме, и о них никто не думает</li>
+          <li><strong>Специалист по охране труда</strong> — письмо 2</li>
+          <li style="color:var(--red)"><strong>НЕ писать:</strong> QA/QP и технологам чистых зон — пока нет валидации, это разговор в минус</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="ind">
+      <div class="ind-head"><h3>4 · Транспорт, логистика, автопарки, СТО</h3><span class="pill p-hot">Недооценённый сегмент</span></div>
+      <p class="ind-sub">Самый быстрый цикл сделки: частные компании, решает один человек, нет комитетов. ГСМ и масло — прямо под BÖWE.</p>
+      <div class="t-scroll">
+        <table>
+          <thead><tr><th style="width:20%">Тип мишени</th><th style="width:9%">Приоритет</th><th style="width:36%">Перспективность</th><th style="width:35%">Как заходить</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Дилерские автоцентры</strong><br><span style="font-size:12px">Кировский / Московский р-н, Пулковское и Витебское ш.</span></td>
+              <td><span class="pill p-hot">A+</span></td>
+              <td>Роба механиков в масле — эталонный кейс для растворителя. Форма ещё и брендированная: грязный механик у дилера = удар по бренду, за это отвечают лично. Решает директор сервиса — <strong>один человек, одно письмо</strong>.</td>
+              <td>Письмо 1 с пробной чисткой. Козырь — комбинация «чисто + быстро + маркировка». Собирать по 2ГИС в радиусе от Стачек, идти пачкой по 15–20 центров.</td>
+            </tr>
+            <tr>
+              <td><strong>Транспортные и логистические компании с своим автопарком</strong><br><span style="font-size:12px">Шушары, Парнас, Уткина Заводь</span></td>
+              <td><span class="pill p-warm">A−</span></td>
+              <td>Свои ремзоны, механики, водители. Частные, договор без конкурса. Много таких компаний, и почти никто их не окучивает.</td>
+              <td>Через начальника автоколонны или технического директора. Угол — масло + межсезонная утеплённая форма.</td>
+            </tr>
+            <tr>
+              <td><strong>Сетевые СТО и шиномонтажи</strong></td>
+              <td><span class="pill p-warm">B+</span></td>
+              <td>Малый объём на точку, но сеть даёт агрегированный. Порог входа низкий, решение мгновенное.</td>
+              <td>Писать в управляющую компанию сети, а не на точку. Оффер — единый график объезда всех точек одной машиной.</td>
+            </tr>
+            <tr>
+              <td><strong>Автобусные и спецтехнические парки (частные)</strong></td>
+              <td><span class="pill p-warm">B+</span></td>
+              <td>Ремонтные зоны, мазут, солярка. Важно: <strong>только частные</strong> — ГУПы уходят в тендер.</td>
+              <td>Проверить форму собственности до письма. Если ГУП/АО с госучастием — вычеркнуть.</td>
+            </tr>
+            <tr>
+              <td><strong>Складские комплексы и стивидоры</strong><br><span style="font-size:12px">Порт, Шушары, Горелово</span></td>
+              <td><span class="pill p-cool">B</span></td>
+              <td>Большой линейный персонал в форме, техника, масло. Порт — <strong>рядом со Стачек</strong>.</td>
+              <td>Через АХО или руководителя склада. Угол — объём и близость.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout gold" style="margin-top:18px">
+        <span class="tag">Почему эта отрасль в списке, хотя её нет на сайте</span>
+        <p>
+          Это единственный сегмент, где <strong>решение принимает один человек за одно письмо</strong>: нет службы ОТ,
+          нет комитета по закупкам, нет согласования с финансами. Директор сервиса может сказать «везите» в тот же день.
+          Промышленные гиганты дадут больше денег, но через 6–9 месяцев; автоцентры дадут первые договоры
+          <strong>через 2–3 недели</strong>. Для канала, который надо запустить с нуля и показать результат,
+          это правильное место, чтобы начать — ранние победы финансируют терпение на длинных сделках.
+        </p>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="ind">
+      <div class="ind-head"><h3>5 · HoReCa: отели, рестораны, кейтеринг</h3><span class="pill p-cool">Вторая волна</span></div>
+      <p class="ind-sub">Форма — часть имиджа, текучесть высокая, жир и вино. Осторожно: у крупных отелей часто своя прачечная.</p>
+      <div class="t-scroll">
+        <table>
+          <thead><tr><th style="width:20%">Мишень</th><th style="width:9%">Приоритет</th><th style="width:36%">Перспективность</th><th style="width:35%">Как заходить</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Ginza Project (СПб)</strong><br><span style="font-size:12px">100+ заведений, ginza.ru</span></td>
+              <td><span class="pill p-hot">A</span></td>
+              <td>Ресторанный холдинг с более чем сотней заведений плюс отельное направление. <strong>Один договор — десятки точек.</strong> Своей прачечной под спецодежду нет, форма премиальная, стандарт вида жёсткий.</td>
+              <td>Писать <strong>в управляющую компанию</strong> (операционный директор / директор по закупкам), не в ресторан. Оффер — единый маршрут объезда точек и единый стандарт формы.</td>
+            </tr>
+            <tr>
+              <td><strong>Italy Group</strong><br><span style="font-size:12px">Итали, Италиани, Джем, Гус Гус, Бист и др.</span></td>
+              <td><span class="pill p-warm">A−</span></td>
+              <td>Сеть из нескольких брендов, агрегированный объём. Поварская форма — жир, соусы, вино.</td>
+              <td>Тот же принцип: операционный директор сети. Пробная чистка на одном ресторане, потом тиражирование.</td>
+            </tr>
+            <tr>
+              <td><strong>Сети быстрого питания и столовые</strong><br><span style="font-size:12px">«Евразия», «Теремок» и локальные сети</span></td>
+              <td><span class="pill p-warm">A−</span></td>
+              <td>Много точек, простая форма, огромная текучесть — форма изнашивается и пачкается постоянно. Объём стабильный и предсказуемый.</td>
+              <td>Угол — не имидж, а <strong>оборот и цена за комплект</strong>. Здесь ценовой разговор уместен, в отличие от промышленности.</td>
+            </tr>
+            <tr>
+              <td><strong>Кейтеринговые компании</strong></td>
+              <td><span class="pill p-warm">B+</span></td>
+              <td><strong>Идеальный профиль:</strong> пиковые нагрузки под мероприятия, форма нужна чистой к конкретной дате, своей прачечной нет и не будет. Работают на выезде — грязь тяжёлая.</td>
+              <td>Угол — <strong>срочность и предсказуемость к дате</strong>, а не цена. Кейтеринг заплатит за гарантию, что к субботе форма будет.</td>
+            </tr>
+            <tr>
+              <td><strong>Отели 4–5* без своей прачечной</strong><br><span style="font-size:12px">Бутик-отели и апарт-комплексы</span></td>
+              <td><span class="pill p-cool">B</span></td>
+              <td>Осторожно: <strong>крупные отели держат свою прачечную</strong> — там наш заход бесперспективен. Целевые — бутик-отели и апарты на 50–150 номеров.</td>
+              <td>Через управляющего или руководителя службы номерного фонда. Проверять наличие своей прачечной <strong>до</strong> письма — иначе выстрел в воздух.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="roles">
+        <h4>Кому писать в этой отрасли</h4>
+        <ul>
+          <li><strong>Операционный директор сети</strong> — главная мишень, один договор на все точки</li>
+          <li><strong>Директор по закупкам управляющей компании</strong></li>
+          <li><strong>Шеф-повар / бренд-шеф</strong> — влияет, ему важен вид и скорость</li>
+          <li><strong>Управляющий отелем / руководитель номерного фонда</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. КАК ДОБЫТЬ ИМЯ ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">06 · Метод</span>
+    <h2>Как превратить компанию в живой контакт за 5 минут</h2>
+    <p class="sec-lede">
+      Это операционное ядро всего плана. Компания в списке — это ещё не лид. Лид — это фамилия, должность и
+      адрес, по которому письмо дойдёт. Порядок действий, от самого дешёвого к самому дорогому:
+    </p>
+
+    <ol class="steps">
+      <li>
+        <b>Звонок в приёмную — самый быстрый способ</b>
+        Один вопрос: <em>«Подскажите, кто у вас приказом назначен ответственным за уход за спецодеждой?»</em>
+        или <em>«кто отвечает за охрану труда?»</em>. Не продаём, просто уточняем — секретарю проще назвать
+        фамилию, чем разбираться. Записываем ФИО и должность. Дальше спрашиваем рабочую почту «чтобы направить
+        регламент». Конверсия этого приёма выше, чем у любого парсера.
+      </li>
+      <li>
+        <b>hh.ru как радар — самый недооценённый источник</b>
+        Вакансии показывают то, чего нет ни в одной базе:
+        <ul style="margin-top:8px;margin-bottom:0">
+          <li><strong>Ищут «оператора прачечной», «прачку», «оператора стиральных машин»</strong> → у них своя прачечная и она не справляется. <strong>Это готовое письмо 3</strong> с первой строкой, доказывающей неслучайность.</li>
+          <li><strong>Ищут «специалиста по охране труда»</strong> → в отделе новый человек. Новый человек хочет показать результат и <strong>переделывает то, что досталось</strong> — самое окно для нас.</li>
+          <li><strong>Массовый набор рабочих</strong> → парк спецодежды растёт прямо сейчас, бюджет открыт.</li>
+          <li>В вакансии видно структуру подчинения, название отдела и часто — контактное лицо.</li>
+        </ul>
+      </li>
+      <li>
+        <b>Сайт компании: разделы «Контакты», «Поставщикам», «Закупки»</b>
+        У промышленных предприятий там часто лежит прямой адрес отдела снабжения и ФИО руководителя.
+        В разделе «Вакансии» на своём сайте контакт HR тоже даёт вход.
+      </li>
+      <li>
+        <b>Rusprofile / СПАРК — для построения списка, а не для контактов</b>
+        Фильтр по ОКВЭД + регион СПб/ЛО + выручка + численность. Так собирается длинный список мишеней
+        по нашему профилю (50–1 500 человек), а также проверяется <strong>форма собственности</strong> —
+        чтобы отсечь всех, кто обязан идти через конкурс. Это обязательный шаг: одна проверка экономит неделю
+        переписки с теми, кто физически не может подписать прямой договор.
+      </li>
+      <li>
+        <b>2ГИС и Яндекс.Карты — для гео-волны</b>
+        Радиус от пр. Стачек, 100. Отбор автоцентров, СТО, производств и складов в 20 минутах хода машины.
+        Это самый дешёвый список из возможных, и по нему же лучшая экономика доставки.
+      </li>
+      <li>
+        <b>Проверка адреса перед отправкой</b>
+        Прогонять собранные адреса через валидатор. Мёртвые адреса дают отказы сервера, отказы бьют по
+        репутации домена, а репутация решает, попадёт ли письмо во «Входящие» у следующих ста компаний.
+      </li>
+    </ol>
+
+    <div class="callout">
+      <span class="tag">Правило</span>
+      <p>
+        <strong>Ни одного письма на info@ и office@.</strong> Общий ящик читает секретарь, у которого нет ни
+        полномочий, ни мотива нести письмо дальше. Письмо на info@ — это не «дешёвый охват», это ноль с гарантией.
+        Лучше 20 писем живым людям, чем 500 на общие ящики: у первого варианта будут ответы, у второго — только
+        испорченный домен.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. РЕКОМЕНДАЦИИ ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">07 · Техника</span>
+    <h2>Что делает канал рабочим, а что убивает</h2>
+
+    <h3>Доставляемость: без этого остальное не имеет смысла</h3>
+    <ul>
+      <li><strong>Отдельный домен для рассылки.</strong> Не <em>metrochim.ru</em>, а похожий — например, <em>metrochim-service.ru</em>. Если репутация просядет, основной домен и корпоративная почта не пострадают. Это страховка стоимостью в 200 ₽/год.</li>
+      <li><strong>SPF, DKIM, DMARC</strong> настроить до первого письма. Без них Mail.ru и Яндекс — а это почта почти всех наших ЛПР — отправят письмо в спам, каким бы хорошим оно ни было.</li>
+      <li><strong>Прогрев домена 2–3 недели.</strong> Начинать с 5–10 писем в день, наращивать постепенно. Новый домен, выстреливший сотней писем в первый день, умирает в первый день.</li>
+      <li><strong>Потолок 30–40 писем в день с ящика.</strong> Нужно больше — заводить второй ящик, а не разгонять первый.</li>
+      <li><strong>Не более одной ссылки в первом письме</strong>, лучше ноль. Без картинок, без трекинг-пикселей, без вложений. Письмо должно выглядеть как письмо от человека, а не как выпуск рассылки — потому что оно и есть письмо от человека.</li>
+      <li><strong>Отправлять из обычного почтового клиента</strong> в первой сотне писем. Массовые сервисы имеют характерные заголовки, которые фильтры узнают.</li>
+    </ul>
+
+    <h3>Каденция: письмо — это не одно письмо</h3>
+    <p>
+      Ответ на первое касание — исключение, и это нормально. Основная масса ответов приходит на втором и третьем.
+      Но продолжение работает, только если каждое следующее письмо несёт <strong>новый аргумент</strong>, а не напоминание о себе.
+    </p>
+    <div class="t-scroll">
+      <table>
+        <thead><tr><th style="width:10%">Шаг</th><th style="width:12%">Когда</th><th style="width:40%">Что отправляем</th><th style="width:38%">Смысл</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>День 0</td><td>Основное письмо под отрасль (шаблон 1, 2 или 3)</td><td>Одна боль, один вопрос, оффер пробной чистки</td></tr>
+          <tr><td><strong>2</strong></td><td>День 3–4</td><td><strong>Звонок</strong>, а не письмо: «направлял вам письмо про робу в масле, пара вопросов»</td><td>Письмо даёт звонку легитимность, звонок даёт письму прочтение. По отдельности оба слабее</td></tr>
+          <tr><td><strong>3</strong></td><td>День 7–8</td><td>Второе письмо: <strong>другой угол</strong>. Писали про масло — теперь про фиксацию цены на 5 лет</td><td>Возможно, мы просто не попали в его боль. Меняем боль, а не громкость</td></tr>
+          <tr><td><strong>4</strong></td><td>День 14–16</td><td>Третье письмо: короткий факт или мини-кейс отрасли. 3–4 строки</td><td>Последняя попытка. Без давления и без «вы проигнорировали»</td></tr>
+          <tr><td><strong>5</strong></td><td>День 21</td><td><strong>Письмо-закрытие:</strong> «понимаю, что тема неактуальна — закрываю вопрос. Если что-то изменится, вы знаете, где нас найти»</td><td><strong>Даёт больше всего ответов из всей цепочки.</strong> Снимает давление и включает нежелание терять опцию</td></tr>
+          <tr><td><strong>6</strong></td><td>Через 4–6 мес.</td><td>Возврат с новым поводом (сезон, зимняя форма, новая услуга)</td><td>«Нет» почти всегда означает «не сейчас». Отказ — это дата, а не приговор</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Стоп-правило:</strong> ответили «не интересно» — цепочка останавливается немедленно. Дожимать после прямого отказа — это минус репутация домена и минус компания навсегда.</p>
+
+    <h3>Метрики: за чем следить и за чем не надо</h3>
+    <div class="stats">
+      <div class="stat"><div class="n">Ответы</div><div class="l"><strong>Единственная метрика, которой можно верить.</strong> Цель — 5–8% на цепочку по тёплой отрасли</div></div>
+      <div class="stat"><div class="n">Пробные чистки</div><div class="l">Главный KPI канала. Отдал 5 комплектов = почти клиент. Считать штуки, а не проценты</div></div>
+      <div class="stat"><div class="n">Open rate</div><div class="l">Игнорировать. Пиксели режутся Mail.ru и Яндексом, цифра врёт в обе стороны</div></div>
+      <div class="stat"><div class="n">Отказы (bounce)</div><div class="l">Держать ниже 3%. Выше — база грязная, останавливаться и чистить</div></div>
+    </div>
+
+    <h3>Ритм работы</h3>
+    <ul>
+      <li><strong>Волнами по 20–30 компаний одной отрасли</strong>, а не 200 писем во все стороны. Одна отрасль за волну — тогда работают возражения: то, что ответил третий, переписывается в письмо для двадцатого. Разнородная рассылка ничему не учит.</li>
+      <li><strong>Вторник–четверг, 9:00–11:00.</strong> Понедельник — разбор завалов, пятница — уже никто ничего не решает.</li>
+      <li><strong>Один человек — один ответственный за канал.</strong> Рассылка, которую ведут «когда есть время», не даёт ничего: цепочки рвутся на втором шаге, где как раз и начинаются ответы.</li>
+      <li><strong>Вести таблицу.</strong> Компания, ФИО, роль, дата касания, шаг цепочки, ответ. Без этого на сотне контактов начинается хаос: кому-то уйдёт два одинаковых письма, а кто-то потеряется навсегда.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="tag">Форма письма</span>
+      <p>
+        Пишем юрлицу, на рабочий адрес, с конкретным деловым предложением по его профилю, за подписью живого
+        человека с телефоном и адресом производства. Это переписка между двумя компаниями, а не реклама в чистом
+        виде — и выглядеть она должна именно так. Внизу — одна строка «если тема не ваша, напишите, и я больше
+        не побеспокою». Она стоит ничего, снимает раздражение и заметно улучшает тон ответов.
+      </p>
+    </div>
+
+    <h3>Три вещи, которые убьют канал быстрее всего</h3>
+    <ol>
+      <li><strong>Купленная база.</strong> Мёртвые адреса → отказы → репутация домена → письма не доходят даже к тем, кто ждёт. Плюс в купленных базах нет ролей — а без роли писать нечего.</li>
+      <li><strong>Одно письмо на все отрасли.</strong> Универсальное письмо не бьёт ни в одну боль. Механику всё равно про HACCP, технологу — про масло.</li>
+      <li><strong>Продажа услуги вместо продажи пробной чистки.</strong> В холодном письме никто не покупает договор. Покупают маленький безрисковый шаг — и это как раз то, что у Метрохима уже есть.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 8. ПЛАН ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">08 · Запуск</span>
+    <h2>Первые 30 дней</h2>
+    <ol class="steps">
+      <li><b>Неделя 1 · Инфраструктура</b>Домен для рассылки, SPF/DKIM/DMARC, ящик, начало прогрева (5–10 писем/день). Параллельно — таблица учёта касаний. Решить открытые вопросы из раздела 09.</li>
+      <li><b>Неделя 1–2 · Первый список</b>Гео-волна от Стачек: автоцентры и СТО в радиусе 20 минут (2ГИС) + «Армалит», «Петрохолод» и подобные им по профилю. Цель — <strong>40 живых контактов с ФИО</strong>, добытых звонком в приёмную и через hh.ru.</li>
+      <li><b>Неделя 2–3 · Первая волна</b>Транспорт/автоцентры письмом 1. Это отрасль с самым коротким циклом — она даст первые ответы и обкатает возражения на тех, кто отвечает быстро.</li>
+      <li><b>Неделя 3 · Пробные чистки</b>Отработать каждую заявку идеально: забрать в тот же день, вернуть быстро, привезти лично. <strong>Сфотографировать «до/после».</strong> Эти фото — актив: они станут доказательством в следующих письмах и на сайте, где сейчас стоят заглушки вместо фото.</li>
+      <li><b>Неделя 4 · Вторая волна + разбор</b>Машиностроение и пищёвка письмами 1 и 2. Посчитать: сколько ответов, сколько пробных чисток, какие возражения повторяются. Переписать шаблоны под то, что реально отвечают, — и только теперь масштабировать.</li>
+    </ol>
+
+    <div class="callout gold">
+      <span class="tag">Что даёт рассылка сверх заявок</span>
+      <p>
+        Даже если первая волна не принесёт ни одного договора, она принесёт то, чего у проекта сейчас нет:
+        <strong>реальные слова клиентов</strong>. Возражения, формулировки, названия должностей, реальные сроки
+        принятия решения. Это ровно тот материал, которого не хватает сайту, где отраслевые тексты сейчас
+        написаны от аренды, а фото — заглушки. <strong>Рассылка — самый дешёвый способ узнать, что на самом деле
+        говорить на сайте.</strong> Она окупается как исследование, ещё до того как окупится как канал продаж.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. ОТКРЫТЫЕ ВОПРОСЫ ============ -->
+<section>
+  <div class="wrap">
+    <span class="sec-num">09 · Развилки</span>
+    <h2>Что нужно от вас, чтобы это поехало</h2>
+    <p class="sec-lede">Всё это влияет на текст писем. Догадываться тут нельзя — цена ошибки в холодном письме
+      выше, чем на сайте: на сайте неточность заметит не каждый, а в письме на неё указывает лично ЛПР, и второго письма уже не будет.</p>
+    <div class="t-scroll">
+      <table>
+        <thead><tr><th style="width:34%">Вопрос</th><th style="width:33%">Почему это важно</th><th style="width:33%">Что меняется в зависимости от ответа</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Есть ли чистая зона и валидация процесса для фармы?</strong></td><td>Определяет, можно ли вообще заходить в чистые помещения</td><td>Нет → фарма только через склад и инженерку (как в плане). Да → фарма поднимается в приоритете на первое место</td></tr>
+          <tr><td><strong>Реальная цена за кг / за комплект</strong></td><td>У конкурента прайс открыт: 256 ₽/кг летняя, 355 ₽/кг зимняя</td><td>Если мы дешевле — цену можно ставить в письмо. Если дороже — уходим в TCO и 50 циклов, цену не называем</td></tr>
+          <tr><td><strong>Мощность: сколько комплектов в сутки тянем</strong></td><td>Первый вопрос любого крупного клиента — «потянете наш объём?»</td><td>Определяет верхнюю границу мишеней. Нет смысла писать туда, где мы захлебнёмся на второй месяц</td></tr>
+          <tr><td><strong>Можно ли называть заказчиков</strong></td><td>Метрополитен: 50 000+ единиц, 10 000+ работников — это готовое доказательство мощности</td><td>Да → одна строка в письме снимает главное возражение. Нет → доказываем пробной чисткой</td></tr>
+          <tr><td><strong>Минимальный объём договора</strong></td><td>У «Хлорки» — от 4 000 ₽ / 50 кг / 15 комплектов</td><td>Определяет, брать ли мелкие СТО и рестораны или сразу целиться в объём</td></tr>
+          <tr><td><strong>Кто ведёт канал</strong></td><td>Цепочка из 5 шагов требует дисциплины, а не свободного времени</td><td>Нет ответственного — канал не запускать. Лучше не начинать, чем бросить на втором шаге</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h4>Источники</h4>
+    <ul class="src">
+      <li><a href="https://asiz.ru/rynok-servisnoj-arendy-speczodezhdy-zhdet-rosta/">Ассоциация «СИЗ» — рынок сервисной аренды спецодежды ждёт роста</a> — объём рынка, доли, отрасли по потенциалу, барьеры</li>
+      <li><a href="https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%A5%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B8_%D0%B8_%D0%BF%D1%80%D0%B0%D1%87%D0%B5%D1%87%D0%BD%D1%8B%D0%B5_%D0%B2_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8">TAdviser — химчистки и прачечные в России</a> — 23,9 млрд ₽, +6%</li>
+      <li><a href="https://chlorka.ru/knowledge/outsourcing-vs-sobstvennaya-prachechnaya-tco">«Хлорка» — TCO: аутсорсинг против своей прачечной</a> — CAPEX/OPEX, точки окупаемости</li>
+      <li><a href="https://chlorka.ru/nashi-czeny/">«Хлорка» — прайс-лист</a> — цены за кг, условия договора, фиксация на 12 мес</li>
+      <li><a href="https://sbezopasnost.ru/novosti/2025-11-17-osnovnoe-pro-stirku-i-khimchistku-siz-kto-mozhet-okazyvat-uslugi-kak-organizovat">Стирка и химчистка СИЗ: кто может оказывать услуги</a> — чек-лист № 22 Роструда, договор, ответственный, второй комплект</li>
+      <li><a href="https://www.opti-com.ru/company/blog/article/1863">Стирка спецодежды на производстве</a> — варианты организации, ст. 221 ТК РФ</li>
+      <li><a href="https://mir-so.ru/blog/obshchie-sovety/pravila-ukhoda-za-spetsodezhdoy-stirka-chistka-i-remont-dlya-maksimalnogo-sroka-sluzhby/">Правила ухода за спецодеждой</a> — пропитка смывается за 2–3 цикла</li>
+      <li><a href="https://www.thenovelgroup.ru/catalog/mashiny-khimicheskoj-chistki/bowe-p30-detail">BÖWE — машины химчистки на растворителях</a> — перхлорэтилен, углеводород, растворение жира</li>
+      <li><a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%BC%D1%8B%D1%88%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%D0%B0">Промышленность Санкт-Петербурга</a> — 750 крупных и средних предприятий, структура отраслей</li>
+      <li><a href="https://riss.ru/analitycs/3395/">РИСИ — медико-фармацевтический кластер СПб</a> — 165+ компаний кластера</li>
+      <li><a href="https://www.forbes.ru/rating/533511-20-lucsih-farmproizvoditelej-rossii-rejting-forbes-2025">Forbes — 20 лучших фармпроизводителей России 2025</a></li>
+      <li><a href="https://www.dp.ru/a/2026/04/22/ot-kabinetov-k-holdingam">«Деловой Петербург» — рынок частной медицины Петербурга</a></li>
+      <li><a href="https://pharmacopoeia.ru/en/russian-gmp-inspections/pravila-gmp/proizvodstvo-sterilnyh-lekarstvennyh-sredstv/">Правила GMP — производство стерильных лекарственных средств</a> — требования к одежде чистых зон</li>
+      <li><a href="https://ginza.ru/spb/restaurant">Ginza Project — рестораны СПб</a></li>
+      <li>Внутренние материалы проекта: <em>docs/blueprint/00-intake.md</em>, <em>extracted_text_from_https_metrochim.ru.md</em> — факты о Метрохим: оборудование, 50 циклов, резервный фонд 5–10%, договор до 5 лет, пробная чистка</li>
+    </ul>
+    <div class="foot-note">
+      Отчёт подготовлен для ООО «МЕТРОХИМ» · пр. Стачек, 100 · +7 (812) 748-53-48 · info@metrochim.ru<br>
+      Июль 2026. Рыночные цифры и цены конкурентов актуальны на дату сбора и требуют перепроверки перед использованием в переписке.
+      Названия компаний в разделе 05 — публично действующие организации; ФИО сотрудников намеренно не приводятся и добываются по методу из раздела 06.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
