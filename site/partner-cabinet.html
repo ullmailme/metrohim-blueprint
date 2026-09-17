@@ -10,6 +10,12 @@
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Manrope',system-ui,sans-serif;color:#5b6472;background:#f7f9fc}
+  .sysnav{background:#0f2038}
+  .sysnav-inner{max-width:920px;margin:0 auto;height:52px;display:flex;align-items:center;gap:20px;padding:0 20px;overflow-x:auto}
+  .sysnav a{font-size:12.5px;font-weight:600;color:#aebbd0;white-space:nowrap}
+  .sysnav a.active{color:#fff}
+  .sysnav .b{font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;color:#fff}
+  .sysnav .b span{color:#7fa8e6}
   .wrap{max-width:920px;margin:0 auto;padding:28px 20px 60px}
   header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
   .brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:19px;color:#0f2038}
@@ -40,6 +46,15 @@
 </style>
 </head>
 <body>
+<div class="sysnav"><div class="sysnav-inner">
+  <a class="b" href="./index.html">МЕТРО<span>ХИМ</span></a>
+  <a href="./index.html">Сайт</a>
+  <a href="./partnery.html">Партнёрская программа</a>
+  <a class="active" href="./partner-cabinet.html">Кабинет партнёра</a>
+  <a href="./partner-register.html">Регистрация клиента</a>
+  <a href="./admin-partners.html">Партнёры (админ)</a>
+  <a href="./admin-confirm.html">Оплата (админ)</a>
+</div></div>
 <div class="wrap">
   <header>
     <div class="brand">МЕТРО<span>ХИМ</span> · Кабинет партнёра</div>

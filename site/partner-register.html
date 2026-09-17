@@ -9,7 +9,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Manrope',system-ui,sans-serif;color:#5b6472;background:#eef3f9;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  body{font-family:'Manrope',system-ui,sans-serif;color:#5b6472;background:#eef3f9;min-height:100vh}
+  .sysnav{background:#0f2038}
+  .sysnav-inner{max-width:960px;margin:0 auto;height:52px;display:flex;align-items:center;gap:20px;padding:0 20px;overflow-x:auto}
+  .sysnav a{font-size:12.5px;font-weight:600;color:#aebbd0;white-space:nowrap}
+  .sysnav a.active{color:#fff}
+  .sysnav .b{font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;color:#fff}
+  .sysnav .b span{color:#7fa8e6}
+  .center{display:flex;align-items:center;justify-content:center;padding:24px;min-height:calc(100vh - 52px)}
   .brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;color:#0f2038;margin-bottom:22px;text-align:center}
   .brand span{color:#1e4fa3}
   .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(15,32,56,0.1);padding:clamp(24px,4vw,40px);max-width:440px;width:100%}
@@ -27,6 +34,16 @@
 </style>
 </head>
 <body>
+<div class="sysnav"><div class="sysnav-inner">
+  <a class="b" href="./index.html">МЕТРО<span>ХИМ</span></a>
+  <a href="./index.html">Сайт</a>
+  <a href="./partnery.html">Партнёрская программа</a>
+  <a href="./partner-cabinet.html">Кабинет партнёра</a>
+  <a class="active" href="./partner-register.html">Регистрация клиента</a>
+  <a href="./admin-partners.html">Партнёры (админ)</a>
+  <a href="./admin-confirm.html">Оплата (админ)</a>
+</div></div>
+<div class="center">
 <div style="width:100%;max-width:440px">
   <div class="brand">МЕТРО<span>ХИМ</span></div>
   <div class="card">
@@ -47,6 +64,7 @@
       <p style="color:#8b93a1">Код действует один раз и закреплён за вами.</p>
     </div>
   </div>
+</div>
 </div>
 <script>
   var params = new URLSearchParams(location.search);

@@ -10,12 +10,16 @@
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Manrope',system-ui,sans-serif;color:#5b6472;background:#f7f9fc}
+  .sysnav{background:#0f2038}
+  .sysnav-inner{max-width:960px;margin:0 auto;height:52px;display:flex;align-items:center;gap:20px;padding:0 20px;overflow-x:auto}
+  .sysnav a{font-size:12.5px;font-weight:600;color:#aebbd0;white-space:nowrap}
+  .sysnav a.active{color:#fff}
+  .sysnav .b{font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;color:#fff}
+  .sysnav .b span{color:#7fa8e6}
   .wrap{max-width:960px;margin:0 auto;padding:28px 20px 60px}
   header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:16px;flex-wrap:wrap}
   .brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:19px;color:#0f2038}
   .brand span{color:#1e4fa3}
-  nav a{font-size:13px;font-weight:600;color:#5b6472;margin-left:18px}
-  nav a.active{color:#1e4fa3}
   .card{background:#fff;border:1px solid #e3e8ef;border-radius:16px;padding:22px;margin-bottom:20px}
   h1{font-family:'Outfit',sans-serif;font-weight:700;font-size:20px;color:#101826;margin-bottom:4px}
   .lede{font-size:13.5px;color:#8b93a1;margin-bottom:18px}
@@ -36,10 +40,18 @@
 </style>
 </head>
 <body>
+<div class="sysnav"><div class="sysnav-inner">
+  <a class="b" href="./index.html">МЕТРО<span>ХИМ</span></a>
+  <a href="./index.html">Сайт</a>
+  <a href="./partnery.html">Партнёрская программа</a>
+  <a href="./partner-cabinet.html">Кабинет партнёра</a>
+  <a href="./partner-register.html">Регистрация клиента</a>
+  <a class="active" href="./admin-partners.html">Партнёры (админ)</a>
+  <a href="./admin-confirm.html">Оплата (админ)</a>
+</div></div>
 <div class="wrap">
   <header>
     <div class="brand">МЕТРО<span>ХИМ</span> · Партнёрская программа</div>
-    <nav><a class="active" href="./admin-partners.html">Партнёры</a><a href="./admin-confirm.html">Подтвердить оплату</a></nav>
   </header>
 
   <div class="card">
