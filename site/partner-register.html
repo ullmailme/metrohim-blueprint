@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Скидка от партнёра — МЕТРОХИМ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Manrope',system-ui,sans-serif;color:#5b6472;background:#eef3f9;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+  .brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;color:#0f2038;margin-bottom:22px;text-align:center}
+  .brand span{color:#1e4fa3}
+  .card{background:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(15,32,56,0.1);padding:clamp(24px,4vw,40px);max-width:440px;width:100%}
+  h1{font-family:'Outfit',sans-serif;font-weight:700;font-size:22px;color:#101826;letter-spacing:-.3px;margin-bottom:8px}
+  .lede{font-size:14px;line-height:1.5;color:#5b6472;margin-bottom:22px}
+  .lede b{color:#0f2038}
+  label{display:block;font-size:12.5px;font-weight:600;color:#0f2038;margin-bottom:5px}
+  input{width:100%;border:1px solid #e3e8ef;border-radius:10px;padding:12px 14px;font-size:14.5px;color:#0f2038;margin-bottom:14px}
+  button{width:100%;background:#1e4fa3;color:#fff;border:none;border-radius:9999px;padding:14px;font-family:'Outfit',sans-serif;font-weight:700;font-size:15px;cursor:pointer}
+  .note{font-size:11.5px;color:#8b93a1;text-align:center;margin-top:14px}
+  #done{display:none;text-align:center}
+  #done .kick{display:inline-block;background:#eef3f9;color:#0f2038;font-family:'Outfit',sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:9999px;margin-bottom:16px}
+  #done .code{font-family:'Outfit',sans-serif;font-weight:800;font-size:34px;letter-spacing:2px;color:#1e4fa3;background:#eef3f9;border-radius:12px;padding:18px;margin-bottom:16px}
+  #done p{font-size:13.5px;line-height:1.6;color:#5b6472;margin-bottom:6px}
+</style>
+</head>
+<body>
+<div style="width:100%;max-width:440px">
+  <div class="brand">МЕТРО<span>ХИМ</span></div>
+  <div class="card">
+    <div id="form">
+      <h1>Скидка на первый заказ</h1>
+      <p class="lede">Вас направил партнёр «<b id="partnerName">ООО «АудитОхранТруда»</b>». Оставьте контакт — получите код на скидку.</p>
+      <label>Имя</label>
+      <input id="cname" type="text" placeholder="Иван Петров">
+      <label>Телефон</label>
+      <input id="cphone" type="tel" placeholder="+7 (___) ___-__-__">
+      <button onclick="register()">Получить код скидки</button>
+      <div class="note">Код закреплён за вами и партнёром — покажите его при заказе в МЕТРОХИМ</div>
+    </div>
+    <div id="done">
+      <div class="kick">Скидка на первый заказ — 10%</div>
+      <div class="code" id="genCode">MH-0000</div>
+      <p>Покажите этот код сотруднику при оформлении заказа — скидка применится автоматически.</p>
+      <p style="color:#8b93a1">Код действует один раз и закреплён за вами.</p>
+    </div>
+  </div>
+</div>
+<script>
+  var params = new URLSearchParams(location.search);
+  var partner = params.get('partner');
+  if (partner) document.getElementById('partnerName').textContent = decodeURIComponent(partner);
+  function register(){
+    var name = document.getElementById('cname').value.trim();
+    var phone = document.getElementById('cphone').value.trim();
+    if(!name || !phone){ alert('Заполните имя и телефон'); return; }
+    var code = 'MH-' + Math.floor(1000 + Math.random()*9000);
+    document.getElementById('genCode').textContent = code;
+    document.getElementById('form').style.display = 'none';
+    document.getElementById('done').style.display = 'block';
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кабинет партнёра — МЕТРОХИМ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Manrope',system-ui,sans-serif;color:#5b6472;background:#f7f9fc}
+  .wrap{max-width:920px;margin:0 auto;padding:28px 20px 60px}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+  .brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:19px;color:#0f2038}
+  .brand span{color:#1e4fa3}
+  .who{font-size:13px;color:#8b93a1}
+  .who b{color:#0f2038}
+  .card{background:#fff;border:1px solid #e3e8ef;border-radius:16px;padding:22px}
+  .tier{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;margin-bottom:20px}
+  @media(max-width:600px){.tier{grid-template-columns:1fr}}
+  .badge{font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;color:#fff;background:#c08a1e;border-radius:9999px;padding:8px 18px;display:inline-flex;align-items:center;gap:8px}
+  .pct{font-family:'Outfit',sans-serif;font-weight:800;font-size:40px;color:#0f2038;letter-spacing:-1px;margin:10px 0 2px}
+  .bar-track{height:8px;background:#eef3f9;border-radius:9999px;overflow:hidden;margin:10px 0 6px}
+  .bar-fill{height:100%;background:#1e4fa3;border-radius:9999px}
+  .prog-note{font-size:12.5px;color:#8b93a1}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+  @media(max-width:600px){.stats{grid-template-columns:1fr}}
+  .stat{background:#eef3f9;border-radius:12px;padding:16px}
+  .stat .n{font-family:'Outfit',sans-serif;font-weight:800;font-size:24px;color:#0f2038}
+  .stat .l{font-size:12.5px;color:#5b6472;margin-top:2px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+  th{text-align:left;font-family:'Outfit',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#8b93a1;padding:10px 12px;border-bottom:1px solid #e3e8ef}
+  td{padding:12px;border-bottom:1px solid #eef1f4;color:#0f2038}
+  .pill{display:inline-block;font-family:'Outfit',sans-serif;font-weight:700;font-size:11.5px;border-radius:9999px;padding:3px 10px}
+  .pill.paid{background:#e6f4ee;color:#2e7d5b}
+  .pill.pending{background:#fdf3ec;color:#b4690e}
+  h2{font-family:'Outfit',sans-serif;font-weight:700;font-size:17px;color:#101826;margin-bottom:14px}
+  .section{margin-top:26px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">МЕТРО<span>ХИМ</span> · Кабинет партнёра</div>
+    <div class="who">Партнёр: <b>ООО «АудитОхранТруда»</b> · код <b>P-4417</b></div>
+  </header>
+
+  <div class="card tier">
+    <div>
+      <div class="badge">● Серебро</div>
+      <div class="pct">10%</div>
+      <div class="prog-note">с каждого первого заказа приведённого клиента</div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;color:#0f2038;font-weight:600;margin-bottom:4px">
+        <span>7 из 10 клиентов до уровня «Золото» (15%)</span><span>7/10</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" style="width:70%"></div></div>
+      <div class="prog-note">Приведите ещё 3 оплаченных клиентов — процент вырастет на все следующие начисления.</div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">7</div><div class="l">клиентов оплатили</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">ждут первого заказа</div></div>
+    <div class="stat"><div class="n">18 400 ₽</div><div class="l">начислено всего</div></div>
+  </div>
+
+  <div class="section card">
+    <h2>Приведённые клиенты</h2>
+    <table>
+      <tr><th>Клиент</th><th>Код</th><th>Дата</th><th>Статус</th><th>Бонус</th></tr>
+      <tr><td>ООО «Пекарня №3»</td><td>MH-7734</td><td>12.09.2026</td><td><span class="pill paid">Оплачено</span></td><td>2 400 ₽</td></tr>
+      <tr><td>ИП Соколов</td><td>MH-2201</td><td>08.09.2026</td><td><span class="pill paid">Оплачено</span></td><td>3 100 ₽</td></tr>
+      <tr><td>ООО «Стройсервис СПб»</td><td>MH-9012</td><td>03.09.2026</td><td><span class="pill paid">Оплачено</span></td><td>4 800 ₽</td></tr>
+      <tr><td>ООО «Метиз-Групп»</td><td>MH-5540</td><td>29.08.2026</td><td><span class="pill paid">Оплачено</span></td><td>2 900 ₽</td></tr>
+      <tr><td>ИП Гаранина</td><td>MH-3387</td><td>21.08.2026</td><td><span class="pill paid">Оплачено</span></td><td>1 600 ₽</td></tr>
+      <tr><td>ООО «Фудсервис»</td><td>MH-6621</td><td>14.08.2026</td><td><span class="pill paid">Оплачено</span></td><td>2 100 ₽</td></tr>
+      <tr><td>ООО «СпецМонтаж»</td><td>MH-1145</td><td>02.08.2026</td><td><span class="pill paid">Оплачено</span></td><td>1 500 ₽</td></tr>
+      <tr><td>ИП Волков</td><td>MH-8823</td><td>10.09.2026</td><td><span class="pill pending">Ждёт оплаты</span></td><td>—</td></tr>
+      <tr><td>ООО «Кейтеринг Норд»</td><td>MH-4470</td><td>15.09.2026</td><td><span class="pill pending">Ждёт оплаты</span></td><td>—</td></tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>

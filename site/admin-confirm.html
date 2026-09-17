@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Подтвердить оплату — админка МЕТРОХИМ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Manrope',system-ui,sans-serif;color:#5b6472;background:#f7f9fc}
+  .wrap{max-width:720px;margin:0 auto;padding:28px 20px 60px}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:16px;flex-wrap:wrap}
+  .brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:19px;color:#0f2038}
+  .brand span{color:#1e4fa3}
+  nav a{font-size:13px;font-weight:600;color:#5b6472;margin-left:18px}
+  nav a.active{color:#1e4fa3}
+  .card{background:#fff;border:1px solid #e3e8ef;border-radius:16px;padding:22px;margin-bottom:20px}
+  h1{font-family:'Outfit',sans-serif;font-weight:700;font-size:20px;color:#101826;margin-bottom:4px}
+  .lede{font-size:13.5px;color:#8b93a1;margin-bottom:18px}
+  .searchrow{display:flex;gap:10px}
+  input{flex:1;border:1px solid #e3e8ef;border-radius:10px;padding:12px 14px;font-size:14.5px;color:#0f2038}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:#1e4fa3;color:#fff;border:none;border-radius:9999px;padding:12px 22px;font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap}
+  .hint{font-size:12px;color:#8b93a1;margin-top:8px}
+  #match{display:none;margin-top:20px;border-top:1px solid #e3e8ef;padding-top:18px}
+  .row{display:flex;justify-content:space-between;padding:8px 0;font-size:14px}
+  .row b{color:#0f2038}
+  label{display:block;font-size:12.5px;font-weight:600;color:#0f2038;margin:14px 0 5px}
+  #result{display:none;margin-top:16px;background:#e6f4ee;border-radius:12px;padding:18px}
+  #result .n{font-family:'Outfit',sans-serif;font-weight:800;font-size:24px;color:#2e7d5b}
+  #notfound{display:none;color:#c8501f;font-size:13.5px;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">МЕТРО<span>ХИМ</span> · Партнёрская программа</div>
+    <nav><a href="./admin-partners.html">Партнёры</a><a class="active" href="./admin-confirm.html">Подтвердить оплату</a></nav>
+  </header>
+
+  <div class="card">
+    <h1>Подтвердить оплату</h1>
+    <div class="lede">Найдите код клиента (с чека/экрана регистрации) — система свяжет заказ с партнёром и посчитает бонус.</div>
+    <div class="searchrow">
+      <input id="q" placeholder="Код клиента, например MH-7734, или телефон">
+      <button class="btn" onclick="find()">Найти</button>
+    </div>
+    <div class="hint">Демо: попробуйте код <b>MH-8823</b> (ждёт оплаты) или <b>MH-7734</b> (уже оплачен).</div>
+
+    <div id="notfound">Код не найден — проверьте, правильно ли клиент назвал/показал код.</div>
+
+    <div id="match">
+      <div class="row"><span>Клиент</span><b id="mClient"></b></div>
+      <div class="row"><span>Партнёр</span><b id="mPartner"></b></div>
+      <div class="row"><span>Зарегистрирован</span><b id="mDate"></b></div>
+      <div class="row"><span>Текущий уровень партнёра</span><b id="mTier"></b></div>
+      <label>Сумма заказа, ₽</label>
+      <input id="amount" type="number" placeholder="15000">
+      <button class="btn" style="margin-top:12px" onclick="confirmPay()">Подтвердить оплату</button>
+      <div id="result">
+        Бонус партнёру: <span class="n" id="bonusAmount">0 ₽</span><br>
+        <span style="font-size:12.5px;color:#2e7d5b">Начислено по ставке <span id="bonusRate"></span> — статус клиента изменён на «Оплачено».</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var DB = {
+    'MH-8823': { client: 'ИП Волков', partner: 'ООО «АудитОхранТруда»', date: '10.09.2026', tier: 'Серебро', rate: 0.10, paid: false },
+    'MH-7734': { client: 'ООО «Пекарня №3»', partner: 'ООО «АудитОхранТруда»', date: '12.09.2026', tier: 'Серебро', rate: 0.10, paid: true }
+  };
+  function find(){
+    var q = document.getElementById('q').value.trim().toUpperCase();
+    var rec = DB[q];
+    document.getElementById('match').style.display = 'none';
+    document.getElementById('notfound').style.display = 'none';
+    document.getElementById('result').style.display = 'none';
+    if(!rec){ document.getElementById('notfound').style.display = 'block'; return; }
+    document.getElementById('mClient').textContent = rec.client + (rec.paid ? ' (уже оплачен ранее)' : '');
+    document.getElementById('mPartner').textContent = rec.partner;
+    document.getElementById('mDate').textContent = rec.date;
+    document.getElementById('mTier').textContent = rec.tier + ' · ' + (rec.rate*100) + '%';
+    document.getElementById('match').style.display = 'block';
+    window._rec = rec;
+  }
+  function confirmPay(){
+    var amount = parseFloat(document.getElementById('amount').value);
+    if(!amount){ alert('Введите сумму заказа'); return; }
+    var bonus = Math.round(amount * window._rec.rate);
+    document.getElementById('bonusAmount').textContent = bonus.toLocaleString('ru-RU') + ' ₽';
+    document.getElementById('bonusRate').textContent = (window._rec.rate*100) + '%';
+    document.getElementById('result').style.display = 'block';
+  }
+</script>
+</body>
+</html>

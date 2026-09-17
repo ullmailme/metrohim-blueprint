@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Партнёры — админка МЕТРОХИМ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Manrope',system-ui,sans-serif;color:#5b6472;background:#f7f9fc}
+  .wrap{max-width:960px;margin:0 auto;padding:28px 20px 60px}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:16px;flex-wrap:wrap}
+  .brand{font-family:'Outfit',sans-serif;font-weight:800;font-size:19px;color:#0f2038}
+  .brand span{color:#1e4fa3}
+  nav a{font-size:13px;font-weight:600;color:#5b6472;margin-left:18px}
+  nav a.active{color:#1e4fa3}
+  .card{background:#fff;border:1px solid #e3e8ef;border-radius:16px;padding:22px;margin-bottom:20px}
+  h1{font-family:'Outfit',sans-serif;font-weight:700;font-size:20px;color:#101826;margin-bottom:4px}
+  .lede{font-size:13.5px;color:#8b93a1;margin-bottom:18px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;font-family:'Outfit',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#8b93a1;padding:10px 12px;border-bottom:1px solid #e3e8ef}
+  td{padding:12px;border-bottom:1px solid #eef1f4;color:#0f2038}
+  .pill{display:inline-block;font-family:'Outfit',sans-serif;font-weight:700;font-size:11px;border-radius:9999px;padding:3px 10px;background:#eef3f9;color:#0f2038}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:#1e4fa3;color:#fff;border:none;border-radius:9999px;padding:12px 20px;font-family:'Outfit',sans-serif;font-weight:700;font-size:14px;cursor:pointer}
+  #addForm{display:none;margin-top:18px;border-top:1px solid #e3e8ef;padding-top:18px}
+  label{display:block;font-size:12.5px;font-weight:600;color:#0f2038;margin-bottom:5px}
+  input{width:100%;border:1px solid #e3e8ef;border-radius:10px;padding:11px 13px;font-size:14px;color:#0f2038;margin-bottom:12px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  #result{display:none;margin-top:16px;background:#eef3f9;border-radius:12px;padding:18px;text-align:center}
+  #result .code{font-family:'Outfit',sans-serif;font-weight:800;font-size:26px;color:#1e4fa3;letter-spacing:1px;margin:8px 0}
+  .qr{width:120px;height:120px;margin:12px auto;background:#fff;border:1px solid #e3e8ef;border-radius:8px;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,1fr);gap:2px;padding:8px}
+  .qr div{background:#0f2038}
+  .link{font-size:12px;color:#5b6472;word-break:break-all}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">МЕТРО<span>ХИМ</span> · Партнёрская программа</div>
+    <nav><a class="active" href="./admin-partners.html">Партнёры</a><a href="./admin-confirm.html">Подтвердить оплату</a></nav>
+  </header>
+
+  <div class="card">
+    <h1>Партнёры</h1>
+    <div class="lede">Уровень и процент считаются автоматически по числу оплативших клиентов: 1 → 5%, 10 → 10%, 20 → 15%.</div>
+    <table>
+      <tr><th>Партнёр</th><th>Контакт</th><th>Код</th><th>Уровень</th><th>Клиентов</th><th>Начислено всего</th></tr>
+      <tr><td>ООО «АудитОхранТруда»</td><td>+7 921 000-11-22</td><td>P-4417</td><td><span class="pill">Серебро 10%</span></td><td>7</td><td>18 400 ₽</td></tr>
+      <tr><td>Иванов И.И. (СОУТ-эксперт)</td><td>+7 911 222-33-44</td><td>P-2093</td><td><span class="pill">Золото 15%</span></td><td>23</td><td>61 200 ₽</td></tr>
+      <tr><td>ООО «СИЗ-Поставка»</td><td>+7 812 555-66-77</td><td>P-8810</td><td><span class="pill">Бронза 5%</span></td><td>4</td><td>6 100 ₽</td></tr>
+      <tr><td>ИП Кадрова (кадровое агентство)</td><td>+7 981 444-55-66</td><td>P-1256</td><td><span class="pill">Бронза 5%</span></td><td>1</td><td>1 300 ₽</td></tr>
+    </table>
+    <div style="margin-top:18px">
+      <button class="btn" onclick="document.getElementById('addForm').style.display='block'">+ Добавить партнёра</button>
+    </div>
+    <div id="addForm">
+      <div class="row2">
+        <div><label>Название / имя партнёра</label><input id="pname" placeholder="ООО «Компания» или ФИО"></div>
+        <div><label>Телефон</label><input id="pphone" placeholder="+7 (___) ___-__-__"></div>
+      </div>
+      <button class="btn" onclick="createPartner()">Выдать код и QR</button>
+      <div id="result">
+        <div style="font-size:13px;color:#5b6472">Личный код партнёра</div>
+        <div class="code" id="genCode">P-0000</div>
+        <div class="qr" id="qr"></div>
+        <div class="link" id="genLink"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function createPartner(){
+    var name = document.getElementById('pname').value.trim();
+    if(!name){ alert('Введите имя партнёра'); return; }
+    var code = 'P-' + Math.floor(1000 + Math.random()*9000);
+    document.getElementById('genCode').textContent = code;
+    var link = location.origin + location.pathname.replace('admin-partners.html','partner-register.html') + '?partner=' + encodeURIComponent(name) + '&code=' + code;
+    document.getElementById('genLink').textContent = link;
+    var qr = document.getElementById('qr'); qr.innerHTML = '';
+    for(var i=0;i<36;i++){ var c = document.createElement('div'); c.style.opacity = Math.random() > 0.45 ? 1 : 0; qr.appendChild(c); }
+    document.getElementById('result').style.display = 'block';
+  }
+</script>
+</body>
+</html>
